@@ -1,0 +1,160 @@
+# Meet Jobel V. Golde: A Passionate IT Graduate with a Vision for Technology
+
+Technology has always been more than just a subject for me—it is something that continuously inspires me to learn, create, and solve real-world problems. My name is **Jobel V. Golde**, a **22-year-old** graduate of the **Bachelor of Science in Information Technology (BSIT)** from **Sorsogon State University – Bulan Campus**. Throughout my academic journey, I developed a strong interest in software development, web technologies, networking, and creating digital solutions that can make people's lives easier.
+
+From the beginning of my college years, I believed that technology is not simply about writing code. It is about understanding people's needs, identifying problems, and building solutions that are practical, efficient, and meaningful. This mindset has guided every project I have worked on and continues to motivate me as I begin my professional career in the IT industry.
+
+## My Journey into Information Technology
+
+My interest in computers started from simple curiosity. I wanted to understand how websites worked, how applications were created, and how software could automate everyday tasks. That curiosity gradually grew into a passion for programming and web development.
+
+During my time at university, I learned the foundations of software development, database management, networking, system analysis, and information systems. Every semester introduced new challenges that pushed me to improve my logical thinking, creativity, and problem-solving abilities.
+
+Instead of seeing programming as merely writing lines of code, I learned to appreciate the planning, analysis, testing, and continuous improvement that go into developing quality software. Each project became an opportunity to sharpen my technical skills while also learning the importance of communication, teamwork, and responsibility.
+
+## Technical Skills
+
+Throughout my education and hands-on projects, I gained experience with various programming languages, frameworks, and development tools that are commonly used in modern software development.
+
+### Programming Languages
+
+* JavaScript
+* PHP
+* Java
+* C++
+
+These languages allowed me to understand different programming paradigms and build applications ranging from desktop programs to dynamic web systems.
+
+### Web Development
+
+My primary interest is web development, where I enjoy designing and building interactive, responsive, and user-friendly websites.
+
+I have worked with technologies including:
+
+* HTML
+* CSS
+* Bootstrap
+* Tailwind CSS
+* Laravel
+* Vue.js
+* React.js
+* Inertia.js
+
+These tools helped me build complete web applications that combine attractive user interfaces with reliable backend functionality.
+
+### Database Management
+
+Data plays a crucial role in every application. Throughout my projects, I gained experience working with:
+
+* MySQL
+* phpMyAdmin
+
+I learned how to design relational databases, optimize queries, and manage application data efficiently.
+
+### Development Tools
+
+To improve productivity and collaboration, I regularly use:
+
+* Visual Studio Code
+* Git
+* GitHub
+* XAMPP
+* Postman
+* Figma
+
+These tools have become essential parts of my software development workflow, from planning user interfaces to testing APIs and managing source code.
+
+### Additional Technical Knowledge
+
+Beyond programming, I have developed knowledge in several supporting areas of Information Technology, including:
+
+* REST API Integration
+* Version Control
+* CRUD Application Development
+* Linux Fundamentals
+* JSON and API Handling
+* Responsive Web Design
+* Debugging and Troubleshooting
+* Authentication and Authorization
+* Basic UI/UX Principles
+* Basic LAN/WAN Networking
+* IP Addressing
+* Wireshark
+* AI-assisted development using modern AI tools
+
+These skills allow me to approach projects from both technical and practical perspectives.
+
+## Academic and Personal Projects
+
+One of the most rewarding parts of my college experience was developing systems that addressed real needs.
+
+Throughout my academic journey, I participated in several software development projects that strengthened my understanding of application design, database management, and user experience.
+
+These projects involved planning system requirements, designing interfaces, developing backend functionality, integrating databases, and performing testing to ensure reliable performance.
+
+Working on these systems helped me appreciate the complete software development lifecycle—from gathering requirements to deployment and maintenance.
+
+Each project became an opportunity to improve my analytical thinking, coding standards, debugging skills, and teamwork.
+
+## Internship Experience
+
+My internship provided valuable real-world experience where I had the opportunity to apply the concepts I learned in school.
+
+During my training, I contributed to various technical and administrative tasks, including assisting with information management, supporting office operations, organizing digital records, and participating in the development of internal systems.
+
+I also worked on web-based solutions, handled student-related data, and assisted in creating digital materials for institutional activities. These experiences strengthened my technical abilities while teaching me the importance of professionalism, communication, and meeting deadlines.
+
+## Strengths
+
+I believe my greatest strengths are not limited to technical knowledge.
+
+I am someone who enjoys learning continuously and adapting to new technologies. The field of Information Technology changes rapidly, and I understand the importance of staying updated with current trends and best practices.
+
+Some qualities that describe me include:
+
+* Strong problem-solving skills
+* Willingness to learn
+* Attention to detail
+* Teamwork and collaboration
+* Time management
+* Responsibility
+* Adaptability
+* Professional work ethic
+
+These qualities help me remain focused even when working on challenging tasks or unfamiliar technologies.
+
+## My Hobbies
+
+Outside of technology, I enjoy activities that help me stay creative and balanced.
+
+One of my favorite hobbies is **playing the guitar**. Music allows me to relax, express creativity, and take a break from long hours of programming. Whether learning new songs or simply playing for enjoyment, the guitar reminds me that creativity exists both inside and outside the world of technology.
+
+Another hobby that I genuinely enjoy is **coding**. While coding is part of my career path, it is also something I willingly do during my free time. I enjoy experimenting with new frameworks, exploring different programming techniques, building personal projects, and discovering better ways to solve problems.
+
+For me, coding is both a skill and a creative outlet.
+
+## My Career Goals
+
+As I begin my professional journey, my goal is to continue growing as an IT professional while contributing to organizations that value innovation, collaboration, and continuous learning.
+
+I aspire to build software that improves productivity, simplifies everyday tasks, and creates meaningful experiences for users. I also want to continue expanding my knowledge in web development, software engineering, cloud technologies, and emerging digital solutions.
+
+Rather than limiting myself to one specialization, I aim to become a well-rounded technology professional capable of adapting to different roles and challenges.
+
+## My Personal Philosophy
+
+I believe that success is built through consistency, curiosity, and a willingness to learn from every experience.
+
+Every project, every challenge, and every opportunity offers valuable lessons that contribute to personal and professional growth. Technology evolves quickly, and I see lifelong learning as one of the most important qualities an IT professional can have.
+
+I strive to approach every task with dedication, integrity, and a positive attitude while continuously improving both my technical expertise and interpersonal skills.
+
+## Looking Ahead
+
+This is only the beginning of my journey.
+
+As a 22-year-old IT graduate, I know there is still much to learn and many opportunities waiting ahead. Every new challenge is a chance to become a better developer, a stronger problem solver, and a more effective professional.
+
+I look forward to contributing my skills to meaningful projects, collaborating with talented individuals, and continuing to explore the limitless possibilities that technology offers.
+
+Thank you for taking the time to learn about my journey. Whether through software development, technical support, system administration, or future innovations, I remain committed to learning, growing, and using technology to create solutions that make a positive impact.
