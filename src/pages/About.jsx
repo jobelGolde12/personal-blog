@@ -228,7 +228,6 @@ const aboutContent = {
         <li>Assisted in organizing and managing digital student records, including SF10 documentation.</li>
         <li>Provided technical assistance and supported office operations involving information management.</li>
         <li>Designed digital materials and promotional content for institutional events, including graduation and alumni activities.</li>
-        <li>Participated in the development and maintenance of internal web-based systems.</li>
         <li>Collaborated with staff to improve workflow efficiency through digital solutions.</li>
       </ul>
       <p>

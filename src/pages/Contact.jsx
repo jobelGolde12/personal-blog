@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Code2, Mail, Phone, Send } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Code2, Loader2, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const contactMethods = [
@@ -35,6 +35,8 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,12 +46,44 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setSending(true);
+    setError(null);
+
+    try {
+      const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+
+      if (!formEndpoint) {
+        setError(
+          'Form service is not configured yet. Please email me directly at jobelgolde43@gmail.com.',
+        );
+        setSending(false);
+        return;
+      }
+
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `Server responded with ${response.status}`);
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      console.error('Form error:', err);
+      setError(
+        'Failed to send message. Please try again or email me directly at jobelgolde43@gmail.com.',
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   const containerVariants = {
@@ -167,10 +201,11 @@ export default function Contact() {
               animate={{ opacity: 1, scale: 1 }}
               className='mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center'
             >
-              <p className='text-lg font-semibold text-emerald-700'>
-                Message sent successfully.
+              <CheckCircle2 className='mx-auto h-8 w-8 text-emerald-500' />
+              <p className='mt-2 text-lg font-semibold text-emerald-700'>
+                Message sent successfully!
               </p>
-              <p className='mt-2 text-emerald-600'>
+              <p className='mt-1 text-emerald-600'>
                 I’ll get back to you as soon as possible.
               </p>
             </motion.div>
@@ -214,14 +249,34 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className='rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700'
+                >
+                  {error}
+                </motion.div>
+              )}
+
               <motion.button
                 type='submit'
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.98 }}
-                className='group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white transition-all duration-200 hover:bg-slate-800 hover:shadow-lg'
+                disabled={sending}
+                whileHover={sending ? {} : { scale: 1.01 }}
+                whileTap={sending ? {} : { scale: 0.98 }}
+                className='group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white transition-all duration-200 hover:bg-slate-800 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60'
               >
-                Send Message
-                <Send size={18} className='transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
+                {sending ? (
+                  <>
+                    <Loader2 size={18} className='animate-spin' />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={18} className='transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
+                  </>
+                )}
               </motion.button>
             </form>
           )}

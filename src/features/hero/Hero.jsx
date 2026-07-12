@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, ExternalLink, GitFork, Mail, MapPin } from 'lucide-react';
+import { ArrowDown, GitFork, Mail, MapPin } from 'lucide-react';
 
 export default function Hero() {
   // Function to compute age starting from May 7, 2026 (age 22)
@@ -123,7 +123,7 @@ export default function Hero() {
 
               <motion.p 
                 variants={itemVariants}
-                className="flex items-center gap-2 text-lg text-gray-700"
+                className="flex items-center gap-2 text-md text-gray-700"
               >
                 <span className="w-1 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></span>
                 <span className="font-small">IT Graduate</span>
@@ -175,7 +175,9 @@ export default function Hero() {
               className="flex items-center gap-6 pt-4"
             >
               <motion.a
-                href="#"
+                href="https://github.com/jobelGolde12"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
@@ -183,15 +185,27 @@ export default function Hero() {
                 <GitFork className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.facebook.com/jobelGolde"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
               >
-                <ExternalLink className="w-5 h-5" />
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
               </motion.a>
               <motion.a
-                href="#"
+                href="mailto:jobelgolde43@gmail.com"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
