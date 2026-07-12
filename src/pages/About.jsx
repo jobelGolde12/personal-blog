@@ -37,7 +37,14 @@ const aboutContent = {
   intro: (
     <>
       <p>
-        Technology has always been more than a field of study for me—it is a platform for innovation, problem-solving, and continuous learning. My name is <strong>Jobel V. Golde</strong>, and I hold a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <strong className="linkable-text">Sorsogon State University – Bulan Campus</strong>.
+        Technology has always been more than a field of study for me—it is a platform for innovation, problem-solving, and continuous learning. My name is <strong>Jobel V. Golde</strong>, and I hold a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <a 
+  href="https://www.facebook.com/SorSUBulan" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+>
+  Sorsogon State University – Bulan Campus
+</a>.
       </p>
       <p>
         Throughout my academic journey and hands-on experience, I developed a strong foundation in <span className="linkable-text">software development</span>, <span className="linkable-text">web technologies</span>, <span className="linkable-text">database management</span>, <span className="linkable-text">networking</span>, and <span className="linkable-text">IT support</span>. I enjoy transforming ideas into practical digital solutions that improve efficiency, simplify processes, and deliver meaningful value to users.
@@ -47,7 +54,7 @@ const aboutContent = {
       </p>
     </>
   ),
-  journey: (
+  journeyIntro: (
     <>
       <p>
         My interest in technology began with a simple curiosity about how websites, applications, and computer systems worked behind the scenes. That curiosity eventually grew into a passion for designing, developing, and maintaining software solutions.
@@ -62,6 +69,10 @@ const aboutContent = {
         <li>Information Systems</li>
         <li><span className="linkable-text">Software Engineering</span></li>
       </ul>
+    </>
+  ),
+  journeyClosing: (
+    <>
       <p>
         Each project and academic challenge strengthened not only my technical abilities but also my analytical thinking, problem-solving skills, communication, and teamwork.
       </p>
