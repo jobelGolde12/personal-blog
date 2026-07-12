@@ -1,50 +1,45 @@
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Code2, Layers3, Sparkles } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Personal Blog & Portfolio',
-    description:
-      'A premium interactive personal blog built with React, Vite, and Tailwind CSS. Features smooth animations, responsive design, and dynamic content loading.',
-    technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
-    image: '🚀',
-    featured: true,
+    title: 'DUGTONG - Blood Donor System',
+    description: 'Blood donor profiling and management',
+    technologies: ['React Native', 'Expo', 'Turso', 'TypeScript'],
+    features: ['Authentication', 'CRUD', 'Search', 'API'],
+    skills: ['Mobile Development', 'Database Design'],
+    icon: '🩸',
   },
   {
-    title: 'E-Commerce Platform',
-    description:
-      'Full-stack e-commerce solution with product catalog, shopping cart, and payment integration. Built with Vue.js and Laravel backend.',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Stripe API'],
-    image: '🛍️',
+    title: 'Bulan Lost and Found',
+    description: 'Lost & Found Management System',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Bootstrap'],
+    features: ['Authentication', 'Admin Dashboard', 'Reports'],
+    skills: ['Full Stack Development'],
+    icon: '📦',
   },
   {
-    title: 'Task Management App',
-    description:
-      'Collaborative task management tool with real-time updates and user authentication. Features drag-and-drop interface and project organization.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'React Query'],
-    image: '✓',
+    title: 'Personal Finance Tracker',
+    description: 'Expense tracking',
+    technologies: ['Laravel', 'Vue.js', 'MySQL'],
+    features: ['Charts', 'Categories', 'CRUD'],
+    skills: ['REST API', 'MVC'],
+    icon: '💰',
   },
   {
-    title: 'Blog CMS System',
-    description:
-      'Content management system for creating and managing blog posts. Includes rich text editor, scheduling, and analytics dashboard.',
-    technologies: ['Laravel', 'MySQL', 'Bootstrap', 'PHP'],
-    image: '📝',
+    title: 'PRI Inventory System',
+    description: 'School inventory management',
+    technologies: ['Next.js', 'Tailwind CSS', 'Turso'],
+    features: ['Inventory', 'Reports', 'Authentication'],
+    skills: ['React', 'SQL', 'Server Actions'],
+    icon: '📚',
   },
-  {
-    title: 'Weather Dashboard',
-    description:
-      'Real-time weather application with location-based forecasts and detailed meteorological data visualization.',
-    technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS Grid'],
-    image: '🌤️',
-  },
-  {
-    title: 'Social Media Analytics',
-    description:
-      'Analytics dashboard for tracking social media metrics with interactive charts and performance insights.',
-    technologies: ['React', 'D3.js', 'Tailwind CSS', 'Express.js'],
-    image: '📊',
-  },
+];
+
+const heroStats = [
+  { label: 'Projects', value: '4' },
+  { label: 'Stacks', value: '4' },
+  { label: 'Domains', value: '3' },
 ];
 
 export default function Projects() {
@@ -52,134 +47,118 @@ export default function Projects() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
+      transition: { staggerChildren: 0.12 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header */}
+    <div className='relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.10),_transparent_32%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_45%,_#eef2ff_100%)]'>
+      <div className='pointer-events-none absolute left-0 top-24 h-64 w-64 rounded-full bg-blue-200/40 blur-3xl' />
+      <div className='pointer-events-none absolute right-0 top-40 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl' />
+
       <motion.section
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
+        className='relative mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8'
       >
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+        <div className='mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm backdrop-blur'>
+          <Sparkles size={16} /> Real GitHub Projects
+        </div>
+
+        <h1 className='text-5xl font-bold tracking-tight text-slate-900 md:text-6xl'>
           Projects & Portfolio
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Showcase of my recent work and technical projects
+        <p className='mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl'>
+          Four real projects from my GitHub work, presented with their actual
+          technologies, features, and the skills they demonstrate.
         </p>
+
+        <div className='mt-10 flex flex-wrap items-center justify-center gap-3'>
+          <a
+            href='https://github.com/jobelGolde12'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='group inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800'
+          >
+            View GitHub Profile
+            <ArrowUpRight size={16} className='transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5' />
+          </a>
+        </div>
+
+     
       </motion.section>
 
-      {/* Projects Grid */}
       <motion.section
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        className='relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8'
       >
-        {/* Featured Project */}
-        <motion.div
-          variants={itemVariants}
-          className="mb-12 rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow"
-        >
-          <div className="grid md:grid-cols-2 gap-8 items-center p-8 md:p-12">
-            <div className="text-6xl text-center md:text-left">
-              {projects[0].image}
-            </div>
-            <div>
-              <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-                Featured
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                {projects[0].title}
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                {projects[0].description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {projects[0].technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  <ExternalLink size={18} /> View Project
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors"
-                >
-                  <ExternalLink size={18} /> Code
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Other Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.slice(1).map((project, idx) => (
-            <motion.div
-              key={idx}
+        <div className='grid gap-6 md:grid-cols-2'>
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+              className='group overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-[0_20px_70px_rgba(15,23,42,0.12)]'
             >
-              <div className="text-5xl mb-4">{project.image}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className='h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400' />
+
+              <div className='p-6 sm:p-8'>
+                <div className='mb-6 flex items-start justify-between gap-4'>
+                  <div className='flex items-start gap-4'>
+                    <div className='flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-3xl shadow-lg shadow-slate-900/10 transition-transform duration-300 group-hover:scale-105'>
+                      {project.icon}
+                    </div>
+                    <div>
+                      <div className='mb-2 inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700'>
+                        Project {String(index + 1).padStart(2, '0')}
+                      </div>
+                      <h2 className='text-2xl font-bold leading-tight text-slate-900'>
+                        {project.title}
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+
+                <p className='text-base leading-7 text-slate-600'>
+                  {project.description}
+                </p>
+
+                <ProjectSection title='Technologies Used' icon={Layers3} items={project.technologies} />
+                <ProjectSection title='Features' icon={Sparkles} items={project.features} />
+                <ProjectSection title='Skills Demonstrated' icon={Code2} items={project.skills} />
               </div>
-              <div className="flex gap-2">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                >
-                  <ExternalLink size={16} /> View
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors"
-                >
-                  <ExternalLink size={16} /> Code
-                </motion.button>
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </motion.section>
+    </div>
+  );
+}
+
+function ProjectSection({ title, icon: Icon, items }) {
+  return (
+    <div className='mt-6'>
+      <div className='mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
+        <Icon size={14} /> {title}
+      </div>
+      <div className='flex flex-wrap gap-2'>
+        {items.map((item) => (
+          <span
+            key={item}
+            className='rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors duration-200 group-hover:border-blue-200 group-hover:bg-blue-50 group-hover:text-blue-700'
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
