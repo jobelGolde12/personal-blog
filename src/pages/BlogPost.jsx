@@ -45,7 +45,7 @@ export default function BlogPost() {
         </div>
 
         <div className='mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm backdrop-blur'>
-          <div className='border-b border-slate-100 bg-gradient-to-r from-slate-900 to-blue-900 p-8 text-white md:p-10'>
+          <div className='border-b border-slate-100 bg-slate-950 p-8 text-white md:p-10'>
             <p className='max-w-3xl text-base leading-8 text-slate-200 md:text-lg'>
               {post.excerpt}
             </p>

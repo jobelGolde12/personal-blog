@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '../utils/cn';
 
 const navItems = [
   { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
+  { path: '/#about', label: 'About' },
   { path: '/blog', label: 'Blog' },
   { path: '/projects', label: 'Projects' },
   { path: '/contact', label: 'Contact' },
@@ -14,9 +14,48 @@ const navItems = [
 
 export default function Navbar() {
   const location = useLocation();
+  const [activePath, setActivePath] = useState(
+    location.pathname === '/' && location.hash === '#about' ? '/#about' : location.pathname
+  );
   const [isOpen, setIsOpen] = useState(false);
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => activePath === path;
+
+  useEffect(() => {
+    if (location.pathname === '/about' || (location.pathname === '/' && location.hash === '#about')) {
+      setActivePath('/#about');
+    } else {
+      setActivePath(location.pathname);
+    }
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      return;
+    }
+
+    const handleScroll = () => {
+      const aboutSection = document.querySelector('#about');
+      if (!aboutSection) {
+        setActivePath('/');
+        return;
+      }
+
+      const rect = aboutSection.getBoundingClientRect();
+      const threshold = 120;
+
+      if (rect.top <= threshold && rect.bottom > threshold) {
+        setActivePath('/#about');
+      } else {
+        setActivePath('/');
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },

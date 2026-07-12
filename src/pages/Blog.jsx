@@ -56,20 +56,20 @@ export default function Blog() {
           className='mb-8 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm backdrop-blur'
         >
           <div className='grid gap-0 lg:grid-cols-[0.9fr_1.1fr]'>
-            <div className='flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-10 text-left text-white'>
+            <div className='flex items-center justify-center bg-slate-950 p-10 text-left text-white shadow-lg shadow-slate-900/10'>
               <div>
-                <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-100'>
+                <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-200'>
                   Featured Article
                 </div>
                 <h2 className='text-3xl font-bold leading-tight md:text-4xl'>
                   {featuredPost.title}
                 </h2>
-                <p className='mt-4 max-w-xl text-sm leading-7 text-slate-200 md:text-base'>
+                <p className='mt-4 max-w-xl text-sm leading-7 text-slate-300 md:text-base'>
                   {featuredPost.excerpt}
                 </p>
                 <div className='mt-6 flex flex-wrap gap-2'>
                   {featuredPost.technologies.map((tech) => (
-                    <span key={tech} className='rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white'>
+                    <span key={tech} className='rounded-full bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-100'>
                       {tech}
                     </span>
                   ))}

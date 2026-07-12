@@ -290,7 +290,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div id="about" className="scroll-mt-20 min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header Section */}
       <motion.section
         initial={{ opacity: 0, y: -20 }}

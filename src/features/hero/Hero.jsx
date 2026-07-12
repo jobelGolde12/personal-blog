@@ -90,7 +90,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.div
                 variants={itemVariants}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/80 backdrop-blur-sm rounded-full text-blue-700 text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/10 backdrop-blur-sm rounded-full text-slate-900 text-sm font-medium"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
@@ -103,45 +103,35 @@ export default function Hero() {
               
               <motion.h1 
                 variants={itemVariants}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-950 leading-tight"
               >
                 <span className="block">Hi, I'm</span>
-                <motion.span
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent bg-[length:200%_auto]"
-                  animate={{ 
-                    backgroundPosition: ['0%', '100%', '0%'],
-                  }}
-                  transition={{ 
-                    duration: 8, 
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                >
+                <motion.span className="block text-slate-950">
                   Jobel V. Golde
                 </motion.span>
               </motion.h1>
 
               <motion.p 
                 variants={itemVariants}
-                className="flex items-center gap-2 text-md text-gray-700"
+                className="flex items-center gap-2 text-md text-slate-900"
               >
-                <span className="w-1 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></span>
+                <span className="w-1 h-1 bg-slate-950 rounded-full"></span>
                 <span className="font-small">IT Graduate</span>
-                <span className="text-gray-400">|</span>
-                <span className="text-gray-600">Building beautiful & functional web experiences</span>
+                <span className="text-slate-400">|</span>
+                <span className="text-slate-700">Building beautiful & functional web experiences</span>
               </motion.p>
             </motion.div>
 
             <motion.p 
               variants={itemVariants}
-              className="text-gray-600 leading-relaxed text-lg max-w-lg"
+              className="text-slate-800 leading-relaxed text-lg max-w-lg"
             >
-              A passionate <span className="font-semibold text-blue-600">{age}</span>-year-old developer from 
-              <span className="font-medium text-gray-700"> Sorsogon State University - BC</span> with expertise in 
-              <span className="text-blue-600"> React</span>, 
-              <span className="text-purple-600"> Vue.js</span>, 
-              <span className="text-red-600"> Laravel</span>, 
-              <span className="text-gray-800"> Next.js</span> and modern web technologies. 
+              A passionate <span className="font-semibold text-slate-950">{age}</span>-year-old developer from 
+              <span className="font-medium text-slate-900"> Sorsogon State University - BC</span> with expertise in 
+              <span className="text-slate-950"> React</span>, 
+              <span className="text-slate-950"> Vue.js</span>, 
+              <span className="text-slate-950"> Laravel</span>, 
+              <span className="text-slate-950"> Next.js</span> and modern web technologies. 
               I create solutions that combine elegant design with practical functionality.
             </motion.p>
 
@@ -153,18 +143,18 @@ export default function Hero() {
                 href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-3.5 overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35 transition-all duration-300"
+                className="group relative px-8 py-3.5 overflow-hidden bg-slate-950 text-white rounded-xl font-semibold shadow-lg shadow-slate-950/20 hover:shadow-xl hover:shadow-slate-950/30 transition-all duration-300"
               >
                 <span className="relative z-10">View My Work</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </motion.a>
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3.5 border-2 border-gray-200 hover:border-blue-500 text-gray-700 hover:text-blue-600 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg"
+                className="px-8 py-3.5 border-2 border-slate-300 hover:border-slate-950 text-slate-900 hover:text-slate-950 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-slate-950/10"
               >
                 Get In Touch
               </motion.a>
@@ -180,7 +170,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
+                className="text-gray-500 hover:text-slate-950 transition-colors duration-300"
               >
                 <GitFork className="w-5 h-5" />
               </motion.a>
@@ -190,7 +180,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
+                className="text-gray-500 hover:text-slate-950 transition-colors duration-300"
               >
                 <svg
                   className="w-5 h-5"
@@ -208,7 +198,7 @@ export default function Hero() {
                 href="mailto:jobelgolde43@gmail.com"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
+                className="text-gray-500 hover:text-slate-950 transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
               </motion.a>
