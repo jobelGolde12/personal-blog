@@ -1,397 +1,121 @@
-# Development Environment
+Update the **About Page → Academic Projects** section to make each project title interactive by linking it to its corresponding GitHub repository. The implementation should feel polished, modern, and consistent with the overall design of the portfolio.
 
-The project has **already been initialized** in the current directory.
+### Project Links
 
-The following are already installed and configured:
+Use the following URLs:
 
-* React 19+
-* Vite
-* Tailwind CSS 4+
+* **Bulan Lost and Found System**
 
-**DO NOT create a new React project.**
+  * https://github.com/jobelGolde12/bulan_lost_and_found3
 
-**DO NOT run `npm create vite`, `create-react-app`, or reinstall React or Tailwind CSS.**
+* **DUGTONG (Dugo Ko, Tulong Ko)**
 
-Instead, continue development using the existing project structure in the current directory.
+  * https://github.com/jobelGolde12/dugtong_app
 
-Only install additional packages if they are actually required for the implementation.
+* **Personal Portfolio and Web Applications**
 
----
+  * Instead of linking to a single project, direct users to my complete GitHub repositories:
+  * https://github.com/jobelGolde12?tab=repositories
 
-# Technology Stack
+### UI & UX Requirements
 
-Use the following technologies to build a premium, production-ready personal blog application.
+Create an engaging and professional interaction for each project title.
 
-## Core Framework
+#### Link Styling
 
-* React 19+
-* Vite
-* React Router DOM
+* Keep the project titles visually consistent with the current typography.
+* Add a subtle underline animation on hover.
+* Change the text color to the portfolio's primary accent color when hovered.
+* Display a small external-link icon that smoothly fades in beside the title on hover.
+* Use a pointer cursor.
+* Ensure smooth transitions (200–300ms) for all hover effects.
 
-The application must use a component-based architecture.
+#### Hover Tooltip / Popup Banner
 
-Every UI section should be a reusable React component.
+When a user hovers over a project title:
 
-Avoid large components.
+* Display a floating popup banner directly above the hovered link.
+* Animate the popup with a subtle fade + slide-up effect.
+* Include:
 
-Prefer composition over duplication.
+  * GitHub icon
+  * Repository name
+  * Short description
+  * "Click to view source code" message
+* Add a small arrow pointing toward the hovered link.
+* The popup should have:
 
----
+  * Rounded corners
+  * Soft shadow
+  * Glassmorphism or modern card appearance
+  * Backdrop blur
+  * High z-index so it always appears above surrounding content
+* The popup must intelligently reposition itself if it would overflow the viewport.
 
-## Styling
+Example content:
 
-Use:
+**Bulan Lost and Found**
 
-* Tailwind CSS 4+
-* CSS Variables
-* Modern CSS
-* CSS Grid
-* Flexbox
+> Web-based Lost & Found Management System built with Laravel, Vue.js, Inertia.js, and MySQL.
+>
+> **Click to view the source code on GitHub.**
 
-Use Tailwind as the primary styling system.
+**DUGTONG**
 
-Create reusable design tokens.
+> Blood Donor Profiling & Management System designed for efficient donor information management.
+>
+> **Click to view the source code on GitHub.**
 
-Create custom utility classes using Tailwind's `@layer`.
+**Personal Portfolio & Web Applications**
 
-Do not write unnecessarily long utility class strings repeatedly.
+> Explore my complete collection of web development, software engineering, and academic projects.
+>
+> **Browse all GitHub repositories.**
 
-Instead create reusable UI components.
+### Click Behavior
 
-The website should maintain a consistent design system.
+* Open every GitHub link in a new browser tab (`target="_blank"`).
+* Include `rel="noopener noreferrer"` for security.
+* Preserve the current portfolio session when opening external links.
 
----
+### Additional Micro-Interactions
 
-## Utility Libraries
+Implement premium-quality interactions:
 
-Use these libraries whenever appropriate.
+* Slight scale effect (≈1.02–1.05) on hover.
+* Soft glowing shadow around the text while hovered.
+* Smooth tooltip entrance and exit animations.
+* Fade out the external-link icon when the cursor leaves.
+* Tooltip should disappear gracefully when the pointer exits.
+* Support both mouse and keyboard navigation (`:focus-visible`).
+* Display the same popup when the link receives keyboard focus.
+* Add subtle touch feedback for mobile devices.
+* Respect `prefers-reduced-motion` by reducing or disabling animations.
 
-* clsx
-* tailwind-merge
-* react-use
+### Accessibility
 
-Use `clsx` and `tailwind-merge` for conditional class composition.
+* Add descriptive `aria-label` attributes for every project link.
+* Ensure sufficient color contrast in both light and dark themes.
+* Make every project title fully keyboard accessible.
+* Maintain proper semantic HTML (`<a>` elements).
 
-Never concatenate class strings manually.
+### Responsive Design
 
----
+* Tooltip should reposition automatically on tablets and mobile devices.
+* On smaller screens, display the popup below the link if there isn't enough space above.
+* Prevent clipping or overflow near the viewport edges.
+* Keep interactions smooth and usable on touch devices.
 
-## Animation Libraries
+### Code Quality
 
-Use multiple animation libraries where each one performs best.
+* Build this as a reusable React component (e.g., `ProjectLink`) that accepts:
 
-### Framer Motion
+  * Project title
+  * Repository URL
+  * Description
+  * Tooltip content
+* Keep the component modular and reusable for future projects.
+* Use Tailwind CSS utilities where possible, minimizing custom CSS.
+* Ensure animations are performant using CSS transforms and opacity instead of layout-changing properties.
 
-Use for:
-
-* Page transitions
-* Hero animations
-* Card animations
-* Hover animations
-* Button interactions
-* Text reveal
-* Section reveal
-* Floating elements
-* Image animation
-* Navigation animation
-
----
-
-### GSAP
-
-Use only for advanced animations.
-
-Examples:
-
-* Timeline animation
-* SVG drawing
-* Complex sequences
-* Scroll animations
-* Advanced hero entrance
-
-Do not use GSAP for everything.
-
-Only use it where Framer Motion becomes limiting.
-
----
-
-### Lenis
-
-Use Lenis for premium smooth scrolling.
-
-Scrolling should feel modern and buttery smooth.
-
----
-
-## Content Rendering
-
-Use:
-
-* React Markdown
-* Remark GFM
-* Rehype Highlight
-* Highlight.js
-
-If `info.txt` contains markdown formatting, render it correctly.
-
-Support:
-
-* headings
-* lists
-* bold
-* italic
-* code blocks
-* tables
-* links
-* blockquotes
-
----
-
-## Icons
-
-Use
-
-* Lucide React
-* React Icons
-
-Choose icons that match each section.
-
-Avoid inconsistent icon styles.
-
----
-
-## State Management
-
-For this project use:
-
-* React Context API
-
-There is no need for Redux.
-
-Use Context only for:
-
-* Theme
-* Navigation state
-* Reading progress
-* Global UI state
-
----
-
-## Browser APIs
-
-Utilize modern browser APIs.
-
-Examples:
-
-Intersection Observer
-
-Resize Observer
-
-Canvas API
-
-Local Storage
-
-requestAnimationFrame
-
-matchMedia
-
-History API
-
----
-
-# Routing
-
-Use React Router DOM.
-
-Create a scalable routing architecture.
-
-The routes should include:
-
-```text
-/
-
-Home
-
-/about
-
-About Me
-
-/blog
-
-Complete Blog Article
-
-/projects
-
-Projects
-
-/contact
-
-Contact
-
-*
-
-404 Page
-```
-
-Create a dedicated routing folder.
-
-Example:
-
-```text
-src/routes/AppRoutes.jsx
-```
-
-Requirements:
-
-* BrowserRouter
-* Nested routes
-* Lazy loading
-* Suspense
-* Scroll Restoration
-* Animated route transitions
-* Persistent Navbar
-* Persistent Footer
-* Active navigation highlighting
-
-Every page transition should smoothly animate using Framer Motion.
-
----
-
-# Component Architecture
-
-Follow a scalable feature-first architecture.
-
-Every section should live inside its own feature folder.
-
-Example:
-
-```text
-src/
-│
-├── components/
-│
-├── features/
-│   ├── hero/
-│   ├── about/
-│   ├── journey/
-│   ├── skills/
-│   ├── projects/
-│   ├── experience/
-│   ├── hobbies/
-│   ├── goals/
-│   ├── philosophy/
-│   ├── quotes/
-│   ├── contact/
-│   └── blog/
-│
-├── hooks/
-├── context/
-├── layouts/
-├── routes/
-├── pages/
-├── services/
-├── utils/
-├── styles/
-```
-
-Each feature folder should contain:
-
-* Components
-* Styles (if necessary)
-* Hooks
-* Animation helpers
-
-Keep files small.
-
-Avoid components larger than roughly 250 lines.
-
----
-
-# Data Loading
-
-The personal information is stored inside
-
-```text
-public/info.txt
-```
-
-The application should fetch this file dynamically.
-
-Do not hardcode the content.
-
-Parse it into sections and distribute it throughout the application.
-
-The Hero profile image is located at
-
-```text
-public/images/me.jpg
-```
-
-Use this image throughout the website where appropriate.
-
----
-
-# Performance
-
-The application should feel like a premium website.
-
-Optimize for:
-
-* 60 FPS animations
-* Lazy loaded pages
-* Lazy loaded images
-* Route code splitting
-* Memoized components
-* Optimized re-rendering
-* GPU accelerated animations
-* Efficient scrolling
-
-Avoid unnecessary re-renders.
-
-Avoid animation jank.
-
----
-
-# Accessibility
-
-The website must follow accessibility best practices.
-
-Implement:
-
-* Semantic HTML
-* Keyboard navigation
-* Focus indicators
-* ARIA labels
-* Accessible color contrast
-* Responsive typography
-* Reduced motion support
-
----
-
-# Code Quality
-
-Write production-quality React code.
-
-Requirements:
-
-* Functional Components
-* React Hooks
-* Custom Hooks
-* Reusable Components
-* Clean Folder Structure
-* Consistent Naming
-* Separation of Concerns
-* No Duplicate Code
-* No Inline Styles
-* No Hardcoded Colors
-* Meaningful Comments only when necessary
-
-Every component should be easy to maintain and reusable.
-
----
-
-# Final Goal
-
-The finished website should feel like a premium interactive personal website built by a senior React developer.
-
-It should feature elegant animations, reusable architecture, responsive layouts, clean routing, modern UI/UX, excellent performance, and a scalable codebase. Every section should seamlessly present the information from `public/info.txt`, while using `public/images/me.jpg` as the primary profile image in the Hero section. The overall experience should be immersive, polished, and suitable for deployment as a professional personal blog and portfolio.
+The final result should feel like a polished, premium portfolio experience that encourages visitors and recruiters to explore my GitHub projects while maintaining excellent usability, responsiveness, accessibility, and visual consistency throughout the site.
