@@ -1,62 +1,7 @@
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight } from 'lucide-react';
-
-const blogPosts = [
-  {
-    title: 'Building a Modern Web Application with React 19',
-    excerpt:
-      'Explore the latest features in React 19 and how to build scalable web applications with the newest tools and best practices.',
-    author: 'Jobel V. Golde',
-    date: '2024-12-15',
-    category: 'React',
-    readTime: '8 min read',
-  },
-  {
-    title: 'Mastering Tailwind CSS: From Basics to Advanced',
-    excerpt:
-      'A comprehensive guide to using Tailwind CSS efficiently, including custom utilities, animations, and responsive design patterns.',
-    author: 'Jobel V. Golde',
-    date: '2024-12-10',
-    category: 'CSS',
-    readTime: '6 min read',
-  },
-  {
-    title: 'The Art of Writing Clean, Maintainable Code',
-    excerpt:
-      'Best practices for writing code that is easy to understand, maintain, and scale. Learn about naming conventions, architecture, and more.',
-    author: 'Jobel V. Golde',
-    date: '2024-12-05',
-    category: 'Best Practices',
-    readTime: '10 min read',
-  },
-  {
-    title: 'Full-Stack Development with Laravel and Vue.js',
-    excerpt:
-      'Building complete web applications with Laravel backend and Vue.js frontend. From setup to deployment with Inertia.js.',
-    author: 'Jobel V. Golde',
-    date: '2024-11-30',
-    category: 'Full Stack',
-    readTime: '12 min read',
-  },
-  {
-    title: 'Performance Optimization Tips for React Applications',
-    excerpt:
-      'Techniques to optimize your React apps including code splitting, memoization, lazy loading, and performance monitoring.',
-    author: 'Jobel V. Golde',
-    date: '2024-11-25',
-    category: 'Performance',
-    readTime: '7 min read',
-  },
-  {
-    title: 'Understanding API Design and REST Principles',
-    excerpt:
-      'Learn how to design robust and scalable APIs using REST principles, proper status codes, error handling, and documentation.',
-    author: 'Jobel V. Golde',
-    date: '2024-11-20',
-    category: 'Backend',
-    readTime: '9 min read',
-  },
-];
+import { ArrowRight, Calendar, Clock3, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { blogPosts } from '../content/blogPosts';
 
 export default function Blog() {
   const containerVariants = {
@@ -72,97 +17,121 @@ export default function Blog() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const featuredPost = blogPosts[0];
+  const additionalPosts = blogPosts.slice(1);
+
   const formatDate = (dateStr) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateStr).toLocaleDateString(undefined, options);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header */}
+    <div className='min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.10),_transparent_32%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_45%,_#eff6ff_100%)]'>
       <motion.section
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
+        className='mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8'
       >
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+        <div className='mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm backdrop-blur'>
           Blog & Articles
+        </div>
+        <h1 className='text-5xl font-bold tracking-tight text-slate-900 md:text-6xl'>
+          Insights for building better web apps
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Insights, tutorials, and thoughts on web development
+        <p className='mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl'>
+          Practical notes on React, Tailwind CSS, code quality, and full-stack
+          development, written to be useful in real projects.
         </p>
       </motion.section>
 
-      {/* Blog Posts */}
       <motion.section
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        className='mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8'
       >
-        <div className="space-y-6">
-          {blogPosts.map((post, idx) => (
-            <motion.article
-              key={idx}
-              variants={itemVariants}
-              whileHover={{ x: 8 }}
-              className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow border border-gray-100 group cursor-pointer"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-grow">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
-                      {post.category}
-                    </span>
-                    <span className="text-sm text-gray-500">{post.readTime}</span>
-                  </div>
-
-                  <h2 className="text-2xl md:text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h2>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <User size={16} />
-                      <span>{post.author}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar size={16} />
-                      <span>{formatDate(post.date)}</span>
-                    </div>
-                  </div>
+        <motion.article
+          variants={itemVariants}
+          className='mb-8 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm backdrop-blur'
+        >
+          <div className='grid gap-0 lg:grid-cols-[0.9fr_1.1fr]'>
+            <div className='flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-10 text-left text-white'>
+              <div>
+                <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-100'>
+                  Featured Article
                 </div>
-
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex-shrink-0 flex items-center gap-2 text-blue-600 font-semibold"
-                >
-                  Read More
-                  <ArrowRight size={20} />
-                </motion.div>
+                <h2 className='text-3xl font-bold leading-tight md:text-4xl'>
+                  {featuredPost.title}
+                </h2>
+                <p className='mt-4 max-w-xl text-sm leading-7 text-slate-200 md:text-base'>
+                  {featuredPost.excerpt}
+                </p>
+                <div className='mt-6 flex flex-wrap gap-2'>
+                  {featuredPost.technologies.map((tech) => (
+                    <span key={tech} className='rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white'>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
+            </div>
+
+            <div className='p-8 sm:p-10'>
+              <div className='flex flex-wrap items-center gap-3 text-sm text-slate-500'>
+                <span className='rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700'>{featuredPost.category}</span>
+                <span className='flex items-center gap-1'><Clock3 size={15} /> {featuredPost.readTime}</span>
+              </div>
+              <div className='mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-600'>
+                <div className='flex items-center gap-2'><User size={16} /> {featuredPost.author}</div>
+                <div className='flex items-center gap-2'><Calendar size={16} /> {formatDate(featuredPost.date)}</div>
+              </div>
+              <p className='mt-6 text-base leading-7 text-slate-600'>{featuredPost.intro}</p>
+              <Link
+                to={`/blog/${featuredPost.slug}`}
+                className='mt-8 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800'
+              >
+                Read More <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </motion.article>
+
+        <div className='grid gap-6 md:grid-cols-2'>
+          {additionalPosts.map((post) => (
+            <motion.article
+              key={post.slug}
+              variants={itemVariants}
+              whileHover={{ y: -6 }}
+              className='group rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-[0_18px_50px_rgba(15,23,42,0.10)]'
+            >
+              <div className='flex flex-wrap items-center gap-3 text-sm text-slate-500'>
+                <span className='rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700'>{post.category}</span>
+                <span className='flex items-center gap-1'><Clock3 size={15} /> {post.readTime}</span>
+              </div>
+
+              <h2 className='mt-4 text-2xl font-bold text-slate-900 transition-colors group-hover:text-blue-700'>
+                {post.title}
+              </h2>
+
+              <p className='mt-3 text-sm leading-7 text-slate-600'>
+                {post.excerpt}
+              </p>
+
+              <div className='mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-600'>
+                <div className='flex items-center gap-2'><User size={16} /> {post.author}</div>
+                <div className='flex items-center gap-2'><Calendar size={16} /> {formatDate(post.date)}</div>
+              </div>
+
+              <Link
+                to={`/blog/${post.slug}`}
+                className='mt-6 inline-flex items-center gap-2 font-semibold text-blue-700 transition-all duration-200 hover:gap-3 hover:text-blue-800'
+              >
+                Read More <ArrowRight size={18} />
+              </Link>
             </motion.article>
           ))}
         </div>
-
-        {/* Load More Button */}
-        <motion.div
-          variants={itemVariants}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow"
-          >
-            Load More Articles
-          </motion.button>
-        </motion.div>
       </motion.section>
     </div>
   );

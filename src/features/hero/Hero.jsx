@@ -2,6 +2,32 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 export default function Hero() {
+  // Function to compute age starting from May 7, 2026 (age 22)
+  const computeAge = () => {
+    const startDate = new Date(2026, 4, 7); // May 7, 2026 (month is 0-indexed)
+    const currentDate = new Date();
+    const startAge = 22;
+    
+    // Calculate the difference in years
+    let age = startAge;
+    let yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+    
+    // Check if birthday has passed this year
+    const currentMonth = currentDate.getMonth();
+    const currentDay = currentDate.getDate();
+    const startMonth = startDate.getMonth();
+    const startDay = startDate.getDate();
+    
+    // If current month is greater than May (month 4), or it's May and current day >= 7
+    if (currentMonth > startMonth || (currentMonth === startMonth && currentDay >= startDay)) {
+      age = startAge + yearDiff;
+    } else {
+      age = startAge + yearDiff - 1;
+    }
+    
+    return age;
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,6 +57,8 @@ export default function Hero() {
     },
   };
 
+  const age = computeAge();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       {/* Background Gradient */}
@@ -49,13 +77,7 @@ export default function Hero() {
           {/* Left Content */}
           <motion.div variants={itemVariants} className="space-y-6">
             <motion.div variants={itemVariants} className="space-y-2">
-              <motion.p
-                className="text-blue-600 font-semibold text-lg"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                Welcome to my portfolio
-              </motion.p>
+              
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
                 <motion.span
                   className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
@@ -72,7 +94,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-gray-600 leading-relaxed">
-              A passionate 22-year-old developer from Sorsogon State University with expertise in React, Vue.js, Laravel, and modern web technologies. I create solutions that combine elegant design with practical functionality.
+              A passionate {age}-year-old developer from Sorsogon State University - BC with expertise in React, Vue.js, Laravel, Nextjs and modern web technologies. I create solutions that combine elegant design with practical functionality.
             </motion.p>
 
             <motion.div

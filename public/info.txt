@@ -1,160 +1,210 @@
-# Meet Jobel V. Golde: A Passionate IT Graduate with a Vision for Technology
+# Meet Jobel V. Golde: Building Technology That Solves Real Problems
 
-Technology has always been more than just a subject for me—it is something that continuously inspires me to learn, create, and solve real-world problems. My name is **Jobel V. Golde**, a **22-year-old** graduate of the **Bachelor of Science in Information Technology (BSIT)** from **Sorsogon State University – Bulan Campus**. Throughout my academic journey, I developed a strong interest in software development, web technologies, networking, and creating digital solutions that can make people's lives easier.
+Technology has always been more than a field of study for me—it is a platform for innovation, problem-solving, and continuous learning. My name is **Jobel V. Golde**, and I hold a **Bachelor of Science in Information Technology (BSIT)** from **Sorsogon State University – Bulan Campus**.
 
-From the beginning of my college years, I believed that technology is not simply about writing code. It is about understanding people's needs, identifying problems, and building solutions that are practical, efficient, and meaningful. This mindset has guided every project I have worked on and continues to motivate me as I begin my professional career in the IT industry.
+Throughout my academic journey and hands-on experience, I developed a strong foundation in **software development, web technologies, database management, networking, and IT support**. I enjoy transforming ideas into practical digital solutions that improve efficiency, simplify processes, and deliver meaningful value to users.
 
-## My Journey into Information Technology
+I believe technology is not simply about writing code. It is about understanding challenges, designing effective solutions, and creating systems that positively impact individuals and organizations. This philosophy continues to guide my professional growth as I pursue opportunities in the ever-evolving field of Information Technology.
 
-My interest in computers started from simple curiosity. I wanted to understand how websites worked, how applications were created, and how software could automate everyday tasks. That curiosity gradually grew into a passion for programming and web development.
 
-During my time at university, I learned the foundations of software development, database management, networking, system analysis, and information systems. Every semester introduced new challenges that pushed me to improve my logical thinking, creativity, and problem-solving abilities.
+# My Journey in Information Technology
 
-Instead of seeing programming as merely writing lines of code, I learned to appreciate the planning, analysis, testing, and continuous improvement that go into developing quality software. Each project became an opportunity to sharpen my technical skills while also learning the importance of communication, teamwork, and responsibility.
+My interest in technology began with a simple curiosity about how websites, applications, and computer systems worked behind the scenes. That curiosity eventually grew into a passion for designing, developing, and maintaining software solutions.
 
-## Technical Skills
+During my university years, I studied core areas of Information Technology, including:
 
-Throughout my education and hands-on projects, I gained experience with various programming languages, frameworks, and development tools that are commonly used in modern software development.
+* Software Development
+* Web Development
+* Database Management
+* Computer Networking
+* System Analysis and Design
+* Information Systems
+* Software Engineering
 
-### Programming Languages
+Each project and academic challenge strengthened not only my technical abilities but also my analytical thinking, problem-solving skills, communication, and teamwork.
+
+I came to understand that successful software development extends beyond programming. It requires careful planning, collaboration, testing, documentation, and continuous improvement to create reliable and user-centered solutions.
+
+
+# Technical Expertise
+
+I have built experience with a variety of programming languages, frameworks, databases, and development tools used in modern software development.
+
+## Programming Languages
 
 * JavaScript
 * PHP
 * Java
 * C++
 
-These languages allowed me to understand different programming paradigms and build applications ranging from desktop programs to dynamic web systems.
+These languages have enabled me to build applications across different environments while strengthening my understanding of programming principles and software architecture.
 
-### Web Development
+## Web Development
 
-My primary interest is web development, where I enjoy designing and building interactive, responsive, and user-friendly websites.
+Web development is my primary area of interest. I enjoy building responsive, scalable, and user-friendly applications that combine intuitive interfaces with efficient backend functionality.
 
-I have worked with technologies including:
+Technologies I work with include:
 
-* HTML
-* CSS
-* Bootstrap
+* HTML5
+* CSS3
 * Tailwind CSS
+* Bootstrap
 * Laravel
-* Vue.js
 * React.js
+* Vue.js
 * Inertia.js
 
-These tools helped me build complete web applications that combine attractive user interfaces with reliable backend functionality.
+My experience covers both frontend and backend development, allowing me to build complete web applications from concept to deployment.
 
-### Database Management
+## Database Management
 
-Data plays a crucial role in every application. Throughout my projects, I gained experience working with:
+I have experience designing and managing relational databases using:
 
 * MySQL
 * phpMyAdmin
 
-I learned how to design relational databases, optimize queries, and manage application data efficiently.
+My database experience includes schema design, query optimization, data management, and integration with web applications.
 
-### Development Tools
+## Development Tools
 
-To improve productivity and collaboration, I regularly use:
+My development workflow regularly involves:
 
 * Visual Studio Code
 * Git
 * GitHub
-* XAMPP
 * Postman
+* XAMPP
 * Figma
 
-These tools have become essential parts of my software development workflow, from planning user interfaces to testing APIs and managing source code.
+These tools support efficient development, version control, API testing, interface design, and collaborative software development.
 
-### Additional Technical Knowledge
+## Additional Technical Skills
 
-Beyond programming, I have developed knowledge in several supporting areas of Information Technology, including:
+Beyond programming, I have practical knowledge in:
 
-* REST API Integration
-* Version Control
+* REST API Development and Integration
 * CRUD Application Development
-* Linux Fundamentals
-* JSON and API Handling
+* Authentication and Authorization
+* JSON Data Handling
+* Version Control using Git
 * Responsive Web Design
 * Debugging and Troubleshooting
-* Authentication and Authorization
-* Basic UI/UX Principles
+* Linux Fundamentals
 * Basic LAN/WAN Networking
 * IP Addressing
 * Wireshark
-* AI-assisted development using modern AI tools
+* Basic UI/UX Design Principles
+* AI-assisted Software Development
+* Technical Documentation
 
-These skills allow me to approach projects from both technical and practical perspectives.
+I continuously expand my knowledge by exploring new technologies, development practices, and industry trends.
 
-## Academic and Personal Projects
 
-One of the most rewarding parts of my college experience was developing systems that addressed real needs.
+# Academic Projects
 
-Throughout my academic journey, I participated in several software development projects that strengthened my understanding of application design, database management, and user experience.
+Throughout my studies, I developed several projects that strengthened both my technical expertise and understanding of the software development lifecycle.
 
-These projects involved planning system requirements, designing interfaces, developing backend functionality, integrating databases, and performing testing to ensure reliable performance.
+Some of the projects I have worked on include:
 
-Working on these systems helped me appreciate the complete software development lifecycle—from gathering requirements to deployment and maintenance.
+### Bulan Lost and Found System
 
-Each project became an opportunity to improve my analytical thinking, coding standards, debugging skills, and teamwork.
+A web-based platform designed to help manage lost-and-found items within the community. The system focused on efficient record management, user interaction, and secure information handling.
 
-## Internship Experience
+**Technologies:**
+Laravel, Vue.js, Inertia.js, Bootstrap, MySQL
 
-My internship provided valuable real-world experience where I had the opportunity to apply the concepts I learned in school.
+### DUGTONG (Dugo Ko, Tulong Ko)
 
-During my training, I contributed to various technical and administrative tasks, including assisting with information management, supporting office operations, organizing digital records, and participating in the development of internal systems.
+A Blood Donor Profiling and Management System developed to help organize donor information and streamline blood donation management for the Province of Sorsogon.
 
-I also worked on web-based solutions, handled student-related data, and assisted in creating digital materials for institutional activities. These experiences strengthened my technical abilities while teaching me the importance of professionalism, communication, and meeting deadlines.
+This project emphasized database management, user accessibility, and efficient record keeping.
 
-## Strengths
+### Personal Portfolio and Web Applications
 
-I believe my greatest strengths are not limited to technical knowledge.
+I have also developed personal and academic web applications to strengthen my experience with modern web technologies, responsive design, API integration, and frontend development using React.js and Laravel.
 
-I am someone who enjoys learning continuously and adapting to new technologies. The field of Information Technology changes rapidly, and I understand the importance of staying updated with current trends and best practices.
+These projects allowed me to apply best practices in software architecture, database integration, debugging, testing, and user experience design.
 
-Some qualities that describe me include:
 
-* Strong problem-solving skills
-* Willingness to learn
+# Internship Experience
+
+My internship provided valuable industry exposure where I was able to apply classroom knowledge in a professional environment while supporting daily institutional operations.
+
+During my internship, I contributed to several technical and administrative initiatives, including:
+
+* Developed an internal **Account Code System** using **Next.js**, **Tailwind CSS**, and **Turso** to manage accounting categories for various school transactions.
+* Assisted in organizing and managing digital student records, including SF10 documentation.
+* Provided technical assistance and supported office operations involving information management.
+* Designed digital materials and promotional content for institutional events, including graduation and alumni activities.
+* Participated in the development and maintenance of internal web-based systems.
+* Collaborated with staff to improve workflow efficiency through digital solutions.
+
+These experiences strengthened my technical competence while reinforcing the importance of communication, professionalism, adaptability, and delivering quality work within deadlines.
+
+
+# Core Strengths
+
+In addition to my technical skills, I value the professional qualities that contribute to successful collaboration and continuous improvement.
+
+My strengths include:
+
+* Problem-solving and analytical thinking
+* Continuous learning and adaptability
 * Attention to detail
-* Teamwork and collaboration
+* Effective communication
+* Team collaboration
 * Time management
-* Responsibility
-* Adaptability
-* Professional work ethic
+* Professional responsibility
+* Critical thinking
+* Strong work ethic
 
-These qualities help me remain focused even when working on challenging tasks or unfamiliar technologies.
+I enjoy learning new technologies and embracing challenges that allow me to grow both personally and professionally.
 
-## My Hobbies
 
-Outside of technology, I enjoy activities that help me stay creative and balanced.
+# Interests
 
-One of my favorite hobbies is **playing the guitar**. Music allows me to relax, express creativity, and take a break from long hours of programming. Whether learning new songs or simply playing for enjoyment, the guitar reminds me that creativity exists both inside and outside the world of technology.
+Outside of work and academics, I enjoy activities that encourage creativity and lifelong learning.
 
-Another hobby that I genuinely enjoy is **coding**. While coding is part of my career path, it is also something I willingly do during my free time. I enjoy experimenting with new frameworks, exploring different programming techniques, building personal projects, and discovering better ways to solve problems.
+**Coding** is both my profession and one of my favorite hobbies. I enjoy exploring new frameworks, experimenting with emerging technologies, and building personal projects that expand my skills.
 
-For me, coding is both a skill and a creative outlet.
+I also enjoy **playing the guitar**, which provides a creative balance and allows me to relax while developing patience, discipline, and creativity.
 
-## My Career Goals
 
-As I begin my professional journey, my goal is to continue growing as an IT professional while contributing to organizations that value innovation, collaboration, and continuous learning.
+# Career Objectives
 
-I aspire to build software that improves productivity, simplifies everyday tasks, and creates meaningful experiences for users. I also want to continue expanding my knowledge in web development, software engineering, cloud technologies, and emerging digital solutions.
+My goal is to establish a successful career in Information Technology by contributing to organizations that embrace innovation, collaboration, and continuous improvement.
 
-Rather than limiting myself to one specialization, I aim to become a well-rounded technology professional capable of adapting to different roles and challenges.
+I am particularly interested in opportunities involving:
 
-## My Personal Philosophy
+* Software Development
+* Web Development
+* IT Support
+* Technical Support
+* System Administration
+* Business Systems
+* Information Systems
+* Office and Technology Operations
 
-I believe that success is built through consistency, curiosity, and a willingness to learn from every experience.
+As technology continues to evolve, I remain committed to expanding my expertise in modern software development, cloud technologies, artificial intelligence, and emerging digital solutions.
 
-Every project, every challenge, and every opportunity offers valuable lessons that contribute to personal and professional growth. Technology evolves quickly, and I see lifelong learning as one of the most important qualities an IT professional can have.
+I aspire to become a versatile IT professional capable of delivering practical, scalable, and impactful solutions across different industries.
 
-I strive to approach every task with dedication, integrity, and a positive attitude while continuously improving both my technical expertise and interpersonal skills.
 
-## Looking Ahead
+# Professional Philosophy
 
-This is only the beginning of my journey.
+I believe that meaningful growth comes from curiosity, consistency, and a willingness to learn.
 
-As a 22-year-old IT graduate, I know there is still much to learn and many opportunities waiting ahead. Every new challenge is a chance to become a better developer, a stronger problem solver, and a more effective professional.
+Every project presents an opportunity to improve technical expertise, strengthen collaboration, and develop innovative solutions. I approach every responsibility with integrity, professionalism, and a commitment to continuous improvement.
 
-I look forward to contributing my skills to meaningful projects, collaborating with talented individuals, and continuing to explore the limitless possibilities that technology offers.
+For me, technology is not only about building software—it is about creating solutions that make work more efficient, improve user experiences, and contribute positively to organizations and communities.
 
-Thank you for taking the time to learn about my journey. Whether through software development, technical support, system administration, or future innovations, I remain committed to learning, growing, and using technology to create solutions that make a positive impact.
+
+# Looking Ahead
+
+My journey in Information Technology is just beginning.
+
+I look forward to contributing my knowledge, expanding my technical expertise, and collaborating with professionals who are passionate about innovation and continuous learning.
+
+Whether working in software development, web development, technical support, system administration, or other technology-driven roles, I remain committed to delivering high-quality solutions, embracing new challenges, and continuously growing as an IT professional.
+
+Thank you for taking the time to learn more about my journey. I look forward to building meaningful technologies, supporting organizations through innovative solutions, and making a positive contribution to the field of Information Technology.
