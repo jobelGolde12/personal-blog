@@ -281,8 +281,10 @@ a {
 
 .editorial-content p {
   margin: 0 0 var(--paragraph-spacing);
-  max-width: var(--measure);
-  text-wrap: pretty;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .editorial-content p:last-child {
@@ -308,7 +310,6 @@ a {
   padding: 0;
   display: grid;
   gap: 0.75em;
-  max-width: var(--measure);
 }
 
 .editorial-content li {
@@ -420,7 +421,10 @@ a {
 .prose p {
   line-height: var(--line-reading);
   margin-bottom: var(--paragraph-spacing);
-  max-width: var(--measure);
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .prose a {
@@ -443,7 +447,6 @@ a {
   padding-left: 1.1em;
   margin: 1.5em 0;
   color: var(--color-text);
-  max-width: var(--measure);
 }
 
 .prose li {
@@ -474,24 +477,11 @@ a {
 @media (max-width: 767px) {
   :root {
     --text-body: 1.0625rem; /* 17px */
-    --measure: 100%;
   }
 
   .editorial-content {
     font-size: var(--text-body);
     font-variation-settings: "opsz" 17;
-  }
-
-  main p,
-  main li,
-  .editorial-content,
-  .editorial-content p,
-  .editorial-content li,
-  .editorial-lead {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
   }
 
   .hero-section,
@@ -548,7 +538,6 @@ a {
 
 /* Comfortable reading measure on larger screens */
 @media (min-width: 768px) {
-  .editorial-content,
   .editorial-lead {
     max-width: var(--measure);
   }
