@@ -8,6 +8,7 @@ import AboutProjects from '../components/about/AboutProjects';
 import AboutInternship from '../components/about/AboutInternship';
 import AboutStrengths from '../components/about/AboutStrengths';
 import AboutInterests from '../components/about/AboutInterests';
+import AboutGallery from '../components/about/AboutGallery';
 import AboutCareer from '../components/about/AboutCareer';
 
 const skillCategories = [
@@ -337,6 +338,7 @@ export default function About() {
         <AboutInternship itemVariants={itemVariants} aboutContent={aboutContent} />
         <AboutStrengths itemVariants={itemVariants} aboutContent={aboutContent} />
         <AboutInterests itemVariants={itemVariants} aboutContent={aboutContent} />
+        <AboutGallery itemVariants={itemVariants} />
         <AboutCareer itemVariants={itemVariants} aboutContent={aboutContent} />
       </motion.section>
     </div>
