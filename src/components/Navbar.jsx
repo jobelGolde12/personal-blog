@@ -70,14 +70,14 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex-shrink-0 group">
-            <motion.div
+          <Link to="/" className="flex-shrink-0 group" aria-label="Home">
+            <motion.img
+              src="/jobel_logo.png"
+              alt="Jobel logo"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-purple-700 transition-all"
-            >
-              JVG
-            </motion.div>
+              className="h-8 w-8 object-contain transition-opacity group-hover:opacity-80"
+            />
           </Link>
 
           {/* Desktop Menu */}
