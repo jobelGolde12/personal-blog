@@ -406,6 +406,33 @@ a {
   border: 1px solid var(--color-border);
 }
 
+/* Justified text on small screens for even left/right edges (not hero) */
+@media (max-width: 767px) {
+  main p,
+  main li,
+  .editorial-content,
+  .editorial-content p,
+  .editorial-content li,
+  .editorial-lead {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  .hero-section,
+  .hero-section p,
+  .hero-section li,
+  .hero-section span,
+  .hero-section a,
+  .hero-section h1,
+  .hero-section h2,
+  .hero-section h3 {
+    text-align: start;
+    text-justify: auto;
+    hyphens: manual;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

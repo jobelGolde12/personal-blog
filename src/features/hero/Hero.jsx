@@ -63,7 +63,7 @@ export default function Hero() {
   const age = computeAge();
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-8 pb-20">
+    <section className="hero-section relative flex min-h-screen items-center overflow-hidden pt-8 pb-20">
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute top-16 left-[-4rem] h-72 w-72 rounded-full bg-accent/10 blur-[100px]" />
         <div className="absolute right-[-3rem] bottom-24 h-80 w-80 rounded-full bg-muted/20 blur-[110px]" />
