@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export default function AboutStrengths({ itemVariants, aboutContent }) {
   return (
-    <motion.div variants={itemVariants} className="mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">My Strengths</h2>
-      <div className="text-gray-700 space-y-4">
+    <motion.div variants={itemVariants} className="mb-20">
+      <h2 className="editorial-section-title">My Strengths</h2>
+      <div className="editorial-content">
         {aboutContent.strengths}
       </div>
     </motion.div>

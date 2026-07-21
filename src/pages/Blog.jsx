@@ -14,7 +14,11 @@ export default function Blog() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   const featuredPost = blogPosts[0];
@@ -26,19 +30,20 @@ export default function Blog() {
   };
 
   return (
-    <div className='min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.10),_transparent_32%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_45%,_#eff6ff_100%)]'>
+    <div className="editorial-page">
       <motion.section
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        className='mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8'
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="editorial-container py-16 text-center md:py-20"
       >
-        <div className='mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm backdrop-blur'>
+        <div className="editorial-eyebrow mx-auto mb-6">
           Blog & Articles
         </div>
-        <h1 className='text-5xl font-bold tracking-tight text-slate-900 md:text-6xl'>
+        <h1 className="editorial-title mx-auto max-w-4xl text-5xl md:text-6xl">
           Insights for building better web apps
         </h1>
-        <p className='mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl'>
+        <p className="editorial-lead mx-auto mt-6">
           Practical notes on React, Tailwind CSS, code quality, and full-stack
           development, written to be useful in real projects.
         </p>
@@ -46,30 +51,30 @@ export default function Blog() {
 
       <motion.section
         variants={containerVariants}
-        initial='hidden'
-        whileInView='visible'
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        className='mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8'
+        className="editorial-container pb-20"
       >
         <motion.article
           variants={itemVariants}
-          className='mb-8 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm backdrop-blur'
+          className="editorial-card mb-8 overflow-hidden"
         >
-          <div className='grid gap-0 lg:grid-cols-[0.9fr_1.1fr]'>
-            <div className='flex items-center justify-center bg-slate-950 p-10 text-left text-white shadow-lg shadow-slate-900/10'>
+          <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="flex items-center justify-center border-b border-border bg-bg-secondary/80 p-10 text-left lg:border-b-0 lg:border-r">
               <div>
-                <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-200'>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-accent">
                   Featured Article
                 </div>
-                <h2 className='text-3xl font-bold leading-tight md:text-4xl'>
+                <h2 className="font-display text-3xl font-medium leading-tight text-text md:text-4xl">
                   {featuredPost.title}
                 </h2>
-                <p className='mt-4 max-w-xl text-sm leading-7 text-slate-300 md:text-base'>
+                <p className="mt-4 max-w-xl text-sm leading-7 text-text-secondary md:text-base">
                   {featuredPost.excerpt}
                 </p>
-                <div className='mt-6 flex flex-wrap gap-2'>
+                <div className="mt-6 flex flex-wrap gap-2">
                   {featuredPost.technologies.map((tech) => (
-                    <span key={tech} className='rounded-full bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-100'>
+                    <span key={tech} className="editorial-chip">
                       {tech}
                     </span>
                   ))}
@@ -77,57 +82,69 @@ export default function Blog() {
               </div>
             </div>
 
-            <div className='p-8 sm:p-10'>
-              <div className='flex flex-wrap items-center gap-3 text-sm text-slate-500'>
-                <span className='rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700'>{featuredPost.category}</span>
-                <span className='flex items-center gap-1'><Clock3 size={15} /> {featuredPost.readTime}</span>
+            <div className="p-8 sm:p-10">
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
+                <span className="editorial-chip text-accent">{featuredPost.category}</span>
+                <span className="flex items-center gap-1.5">
+                  <Clock3 size={15} strokeWidth={1.5} /> {featuredPost.readTime}
+                </span>
               </div>
-              <div className='mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-600'>
-                <div className='flex items-center gap-2'><User size={16} /> {featuredPost.author}</div>
-                <div className='flex items-center gap-2'><Calendar size={16} /> {formatDate(featuredPost.date)}</div>
+              <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-text-secondary">
+                <div className="flex items-center gap-2">
+                  <User size={16} strokeWidth={1.5} /> {featuredPost.author}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} strokeWidth={1.5} /> {formatDate(featuredPost.date)}
+                </div>
               </div>
-              <p className='mt-6 text-base leading-7 text-slate-600'>{featuredPost.intro}</p>
+              <p className="mt-6 text-base leading-8 text-text-secondary">{featuredPost.intro}</p>
               <Link
                 to={`/blog/${featuredPost.slug}`}
-                className='mt-8 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800'
+                className="editorial-btn editorial-btn-primary mt-8"
               >
-                Read More <ArrowRight size={16} />
+                Read More <ArrowRight size={16} strokeWidth={1.5} />
               </Link>
             </div>
           </div>
         </motion.article>
 
-        <div className='grid gap-6 md:grid-cols-2'>
+        <div className="grid gap-6 md:grid-cols-2">
           {additionalPosts.map((post) => (
             <motion.article
               key={post.slug}
               variants={itemVariants}
-              whileHover={{ y: -6 }}
-              className='group rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-[0_18px_50px_rgba(15,23,42,0.10)]'
+              whileHover={{ y: -4 }}
+              className="editorial-card group p-6 sm:p-8"
             >
-              <div className='flex flex-wrap items-center gap-3 text-sm text-slate-500'>
-                <span className='rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700'>{post.category}</span>
-                <span className='flex items-center gap-1'><Clock3 size={15} /> {post.readTime}</span>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
+                <span className="editorial-chip text-accent">{post.category}</span>
+                <span className="flex items-center gap-1.5">
+                  <Clock3 size={15} strokeWidth={1.5} /> {post.readTime}
+                </span>
               </div>
 
-              <h2 className='mt-4 text-2xl font-bold text-slate-900 transition-colors group-hover:text-blue-700'>
+              <h2 className="mt-5 font-display text-2xl font-medium text-text transition-colors duration-300 group-hover:text-accent">
                 {post.title}
               </h2>
 
-              <p className='mt-3 text-sm leading-7 text-slate-600'>
+              <p className="mt-3 text-sm leading-7 text-text-secondary">
                 {post.excerpt}
               </p>
 
-              <div className='mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-600'>
-                <div className='flex items-center gap-2'><User size={16} /> {post.author}</div>
-                <div className='flex items-center gap-2'><Calendar size={16} /> {formatDate(post.date)}</div>
+              <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-muted">
+                <div className="flex items-center gap-2">
+                  <User size={16} strokeWidth={1.5} /> {post.author}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} strokeWidth={1.5} /> {formatDate(post.date)}
+                </div>
               </div>
 
               <Link
                 to={`/blog/${post.slug}`}
-                className='mt-6 inline-flex items-center gap-2 font-semibold text-blue-700 transition-all duration-200 hover:gap-3 hover:text-blue-800'
+                className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-accent transition-all duration-300 hover:gap-3 hover:text-[#e6c98a]"
               >
-                Read More <ArrowRight size={18} />
+                Read More <ArrowRight size={16} strokeWidth={1.5} />
               </Link>
             </motion.article>
           ))}

@@ -46,71 +46,66 @@ export default function AboutInternship({ itemVariants, aboutContent }) {
   const visibleImages = internshipImages.slice(currentIndex, currentIndex + imagesPerView);
 
   return (
-    <motion.div variants={itemVariants} className="mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Internship Experience</h2>
-      <div className="text-gray-700 space-y-4">
+    <motion.div variants={itemVariants} className="mb-20">
+      <h2 className="editorial-section-title">Internship Experience</h2>
+      <div className="editorial-content">
         {aboutContent.internship}
       </div>
 
-      {/* Images Carousel */}
-      <div className="mt-8">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-6">Internship Gallery</h3>
+      <div className="mt-10">
+        <h3 className="mb-6 font-display text-2xl font-medium text-text">Internship Gallery</h3>
         <div className="flex items-center justify-between gap-4">
-          {/* Left Arrow */}
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
             onClick={handlePrev}
-            className="flex-shrink-0 p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-md"
+            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-300 hover:border-accent/50 hover:bg-card"
             aria-label="Previous images"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} strokeWidth={1.5} />
           </motion.button>
 
-          {/* Images Row */}
           <div className="flex-1 overflow-hidden">
-            <div className="flex gap-4 justify-center">
+            <div className="flex justify-center gap-4">
               {visibleImages.map((image, index) => (
                 <motion.div
                   key={currentIndex + index}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex-shrink-0 w-64 h-64 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                  exit={{ opacity: 0, x: -16 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="h-56 w-56 flex-shrink-0 overflow-hidden rounded-sm border border-border shadow-[0_16px_40px_rgba(0,0,0,0.3)] sm:h-64 sm:w-64"
                 >
                   <img
                     src={image}
                     alt={`Internship experience ${currentIndex + index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Right Arrow */}
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
             onClick={handleNext}
-            className="flex-shrink-0 p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-md"
+            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-300 hover:border-accent/50 hover:bg-card"
             aria-label="Next images"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={22} strokeWidth={1.5} />
           </motion.button>
         </div>
 
-        {/* Image Counter */}
-        <div className="flex justify-center mt-6 gap-2">
+        <div className="mt-6 flex justify-center gap-2">
           {internshipImages.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => setCurrentIndex(Math.max(0, Math.min(index, internshipImages.length - imagesPerView)))}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`h-1 rounded-full transition-all duration-300 ${
                 index >= currentIndex && index < currentIndex + imagesPerView
-                  ? 'bg-blue-600 w-8'
-                  : 'bg-gray-300'
+                  ? 'w-8 bg-accent'
+                  : 'w-2 bg-muted/50'
               }`}
               aria-label={`Go to image set ${Math.floor(index / imagesPerView) + 1}`}
             />

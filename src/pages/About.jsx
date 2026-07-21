@@ -37,11 +37,11 @@ const aboutContent = {
   intro: (
     <>
       <p>
-        Technology has always been more than a field of study for me—it is a platform for innovation, problem-solving, and continuous learning. My name is <strong>Jobel V. Golde</strong>, and I hold a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <a 
-  href="https://www.facebook.com/SorSUBulan" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+        Technology has always been more than a field of study for me—it is a platform for innovation, problem-solving, and continuous learning. My name is <strong>Jobel V. Golde</strong>, and I hold a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <a
+  href="https://www.facebook.com/SorSUBulan"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-accent hover:text-[#e6c98a] transition-colors duration-300 font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
 >
   Sorsogon State University – Bulan Campus
 </a>.
@@ -105,7 +105,7 @@ const aboutContent = {
     <>
       <div className="space-y-8">
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Programming Languages</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Programming Languages</h3>
           <p>
             I have built experience with a variety of programming languages, frameworks, databases, and development tools used in modern software development.
           </p>
@@ -115,13 +115,13 @@ const aboutContent = {
             <li><span className="linkable-text">Java</span></li>
             <li><span className="linkable-text">C++</span></li>
           </ul>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-secondary mt-4">
             These languages have enabled me to build applications across different environments while strengthening my understanding of programming principles and software architecture.
           </p>
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Web Development</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Web Development</h3>
           <p>
             Web development is my primary area of interest. I enjoy building responsive, scalable, and user-friendly applications that combine intuitive interfaces with efficient backend functionality.
           </p>
@@ -136,25 +136,25 @@ const aboutContent = {
             <li><span className="linkable-text">Vue.js</span></li>
             <li><span className="linkable-text">Inertia.js</span></li>
           </ul>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-secondary mt-4">
             My experience covers both frontend and backend development, allowing me to build complete web applications from concept to deployment.
           </p>
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Database Management</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Database Management</h3>
           <p>I have experience designing and managing relational databases using:</p>
           <ul>
             <li><span className="linkable-text">MySQL</span></li>
             <li>phpMyAdmin</li>
           </ul>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-secondary mt-4">
             My database experience includes schema design, query optimization, data management, and integration with web applications.
           </p>
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Development Tools</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Development Tools</h3>
           <p>My development workflow regularly involves:</p>
           <ul>
             <li><span className="linkable-text">Visual Studio Code</span></li>
@@ -164,13 +164,13 @@ const aboutContent = {
             <li><span className="linkable-text">XAMPP</span></li>
             <li><span className="linkable-text">Figma</span></li>
           </ul>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-secondary mt-4">
             These tools support efficient development, version control, API testing, interface design, and collaborative software development.
           </p>
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Additional Technical Skills</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Additional Technical Skills</h3>
           <p>Beyond programming, I have practical knowledge in:</p>
           <ul>
             <li><span className="linkable-text">REST API Development and Integration</span></li>
@@ -188,7 +188,7 @@ const aboutContent = {
             <li>AI-assisted Software Development</li>
             <li>Technical Documentation</li>
           </ul>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-secondary mt-4">
             I continuously expand my knowledge by exploring new technologies, development practices, and industry trends.
           </p>
         </div>
@@ -199,7 +199,7 @@ const aboutContent = {
     <>
       <div className="space-y-8">
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Bulan Lost and Found System</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Bulan Lost and Found System</h3>
           <p>
             A web-based platform designed to help manage lost-and-found items within the community. The system focused on efficient record management, user interaction, and secure information handling.
           </p>
@@ -207,7 +207,7 @@ const aboutContent = {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">DUGTONG (Dugo Ko, Tulong Ko)</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">DUGTONG (Dugo Ko, Tulong Ko)</h3>
           <p>
             A Blood Donor Profiling and Management System developed to help organize donor information and streamline blood donation management for the Province of Sorsogon.
           </p>
@@ -217,7 +217,7 @@ const aboutContent = {
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Personal Portfolio and Web Applications</h3>
+          <h3 className="font-display text-2xl font-medium text-text mb-4">Personal Portfolio and Web Applications</h3>
           <p>
             I have also developed personal and academic web applications to strengthen my experience with modern web technologies, responsive design, API integration, and frontend development using <span className="linkable-text">React.js</span> and <span className="linkable-text">Laravel</span>.
           </p>
@@ -286,7 +286,6 @@ const aboutContent = {
 };
 
 export default function About() {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -297,60 +296,47 @@ export default function About() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (
-    <div id="about" className="scroll-mt-20 min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header Section */}
+    <div id="about" className="editorial-page scroll-mt-24">
       <motion.section
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="editorial-container py-16 md:py-20"
       >
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="editorial-eyebrow mb-6">Profile</div>
+          <h1 className="editorial-title text-5xl md:text-6xl">
             About Me
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="editorial-lead mx-auto mt-5">
             Discover my journey, skills, and passion for technology
           </p>
         </div>
       </motion.section>
 
-      {/* Content Section */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        className="editorial-container max-w-4xl pb-16"
       >
-        {/* Introduction */}
         <AboutIntro itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Journey Section */}
         <AboutJourney itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Skills Section */}
         <AboutSkills itemVariants={itemVariants} skillCategories={skillCategories} />
-
-        {/* Technical Expertise Section */}
         <AboutTechnicalExpertise itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Projects Section */}
         <AboutProjects itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Internship Section */}
         <AboutInternship itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Strengths Section */}
         <AboutStrengths itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Interests Section */}
         <AboutInterests itemVariants={itemVariants} aboutContent={aboutContent} />
-
-        {/* Career Section */}
         <AboutCareer itemVariants={itemVariants} aboutContent={aboutContent} />
       </motion.section>
     </div>

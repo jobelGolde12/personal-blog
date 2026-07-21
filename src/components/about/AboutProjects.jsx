@@ -59,12 +59,12 @@ const projects = [
 
 export default function AboutProjects({ itemVariants }) {
   return (
-    <motion.div variants={itemVariants} className="mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Academic Projects</h2>
-      <div className="space-y-8 text-gray-700">
+    <motion.div variants={itemVariants} className="mb-20">
+      <h2 className="editorial-section-title">Academic Projects</h2>
+      <div className="space-y-10">
         {projects.map((project) => (
-          <div key={project.title}>
-            <h3 className="mb-4 text-2xl font-semibold text-gray-800">
+          <div key={project.title} className="border-t border-border pt-8 first:border-t-0 first:pt-0">
+            <h3 className="mb-4 font-display text-2xl font-medium text-text">
               <ProjectLink
                 title={project.title}
                 href={project.href}
@@ -79,7 +79,7 @@ export default function AboutProjects({ itemVariants }) {
                 }}
               />
             </h3>
-            <div className="space-y-4">{project.body}</div>
+            <div className="editorial-content space-y-4">{project.body}</div>
           </div>
         ))}
       </div>

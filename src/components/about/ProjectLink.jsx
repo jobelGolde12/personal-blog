@@ -126,12 +126,12 @@ export default function ProjectLink({
   }, []);
 
   const anchorClasses = [
-    'relative group inline-flex items-center gap-2 rounded-lg text-blue-700 outline-none transition-all duration-300 ease-out',
-    'cursor-pointer hover:text-blue-800 focus-visible:text-blue-800',
-    'hover:drop-shadow-[0_0_14px_rgba(37,99,235,0.18)] focus-visible:drop-shadow-[0_0_14px_rgba(37,99,235,0.18)]',
+    'relative group inline-flex items-center gap-2 rounded-sm text-accent outline-none transition-all duration-300 ease-out',
+    'cursor-pointer hover:text-[#e6c98a] focus-visible:text-[#e6c98a]',
+    'hover:drop-shadow-[0_0_14px_rgba(213,178,106,0.18)] focus-visible:drop-shadow-[0_0_14px_rgba(213,178,106,0.18)]',
     'after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:content-[""]',
     'hover:after:scale-x-100 focus-visible:after:scale-x-100',
-    shouldReduceMotion ? 'hover:scale-100 focus-visible:scale-100' : 'hover:scale-[1.03] focus-visible:scale-[1.03]',
+    shouldReduceMotion ? 'hover:scale-100 focus-visible:scale-100' : 'hover:scale-[1.02] focus-visible:scale-[1.02]',
   ].join(' ');
 
   const tooltipNode = typeof document === 'undefined'
@@ -165,25 +165,25 @@ export default function ProjectLink({
                 transform: 'translateX(-50%)',
               }}
             >
-              <div className="relative overflow-hidden rounded-2xl border border-white/40 bg-white/90 p-4 shadow-[0_18px_50px_rgba(15,23,42,0.16)] backdrop-blur-xl ring-1 ring-slate-200/70 dark:border-white/10 dark:bg-slate-900/90 dark:ring-white/10">
+              <div className="relative overflow-hidden rounded-sm border border-border bg-card/95 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-950 text-white shadow-sm">
+                  <div className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-border bg-bg text-accent shadow-sm">
                     <GitHubIcon className="h-4 w-4" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">
+                    <p className="text-sm font-semibold text-text">
                       {tooltipContent.repoName}
                     </p>
-                    <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    <p className="mt-1 text-sm leading-6 text-text-secondary">
                       {tooltipContent.description}
                     </p>
-                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-blue-700 dark:text-blue-300">
+                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-accent">
                       {tooltipContent.cta}
                     </p>
                   </div>
                 </div>
                 <span
-                  className="absolute h-3 w-3 rotate-45 border-l border-t border-white/40 bg-white/90 shadow-[0_8px_20px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-900/90"
+                  className="absolute h-3 w-3 rotate-45 border-l border-t border-border bg-card/95 shadow-[0_8px_20px_rgba(0,0,0,0.2)]"
                   style={{
                     left: `${tooltipState.arrowLeft}px`,
                     [tooltipState.placement === 'top' ? 'bottom' : 'top']: '-6px',

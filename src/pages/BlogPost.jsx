@@ -8,7 +8,7 @@ export default function BlogPost() {
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return <Navigate to='/blog' replace />;
+    return <Navigate to="/blog" replace />;
   }
 
   const formatDate = (dateStr) => {
@@ -17,62 +17,69 @@ export default function BlogPost() {
   };
 
   return (
-    <div className='min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.10),_transparent_32%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_45%,_#eff6ff_100%)]'>
+    <div className="editorial-page">
       <motion.section
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        className='mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8'
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8"
       >
         <Link
-          to='/blog'
-          className='inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition-all duration-200 hover:border-blue-200 hover:text-blue-700'
+          to="/blog"
+          className="inline-flex items-center gap-2 rounded-sm border border-border bg-card/60 px-4 py-2 text-sm font-medium text-text-secondary backdrop-blur transition-all duration-300 hover:border-accent/40 hover:text-accent"
         >
-          <ArrowLeft size={16} /> Back to blog
+          <ArrowLeft size={16} strokeWidth={1.5} /> Back to blog
         </Link>
 
-        <div className='mt-8 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700'>
+        <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-accent">
           {post.category}
         </div>
 
-        <h1 className='mt-5 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl'>
+        <h1 className="editorial-title mt-5 text-4xl md:text-5xl">
           {post.title}
         </h1>
 
-        <div className='mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-600'>
-          <div className='flex items-center gap-2'><User size={16} /> {post.author}</div>
-          <div className='flex items-center gap-2'><Calendar size={16} /> {formatDate(post.date)}</div>
-          <div className='flex items-center gap-2'><Clock3 size={16} /> {post.readTime}</div>
+        <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-muted">
+          <div className="flex items-center gap-2">
+            <User size={16} strokeWidth={1.5} /> {post.author}
+          </div>
+          <div className="flex items-center gap-2">
+            <Calendar size={16} strokeWidth={1.5} /> {formatDate(post.date)}
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock3 size={16} strokeWidth={1.5} /> {post.readTime}
+          </div>
         </div>
 
-        <div className='mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-sm backdrop-blur'>
-          <div className='border-b border-slate-100 bg-slate-950 p-8 text-white md:p-10'>
-            <p className='max-w-3xl text-base leading-8 text-slate-200 md:text-lg'>
+        <div className="editorial-card mt-10 overflow-hidden">
+          <div className="border-b border-border bg-bg-secondary/80 p-8 md:p-10">
+            <p className="max-w-3xl text-base leading-8 text-text-secondary md:text-lg">
               {post.excerpt}
             </p>
           </div>
 
-          <div className='space-y-8 p-8 md:p-10'>
-            <p className='text-base leading-8 text-slate-700 md:text-lg'>
+          <div className="space-y-8 p-8 md:p-10">
+            <p className="text-base leading-8 text-text-secondary md:text-lg">
               {post.intro}
             </p>
 
             {post.sections.map((section) => (
-              <section key={section.heading} className='space-y-3'>
-                <h2 className='text-2xl font-bold text-slate-900'>{section.heading}</h2>
+              <section key={section.heading} className="space-y-3">
+                <h2 className="font-display text-2xl font-medium text-text">{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className='text-base leading-8 text-slate-700'>
+                  <p key={paragraph} className="text-base leading-8 text-text-secondary">
                     {paragraph}
                   </p>
                 ))}
               </section>
             ))}
 
-            <section className='rounded-2xl border border-blue-100 bg-blue-50/70 p-6'>
-              <h2 className='text-xl font-bold text-slate-900'>Key Takeaways</h2>
-              <ul className='mt-4 space-y-3 text-slate-700'>
+            <section className="rounded-sm border border-border bg-bg/50 p-6">
+              <h2 className="font-display text-xl font-medium text-text">Key Takeaways</h2>
+              <ul className="mt-4 space-y-3 text-text-secondary">
                 {post.takeaways.map((takeaway) => (
-                  <li key={takeaway} className='flex gap-3'>
-                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600' />
+                  <li key={takeaway} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>{takeaway}</span>
                   </li>
                 ))}
@@ -80,10 +87,10 @@ export default function BlogPost() {
             </section>
 
             <section>
-              <h2 className='text-xl font-bold text-slate-900'>Topics Covered</h2>
-              <div className='mt-4 flex flex-wrap gap-2'>
+              <h2 className="font-display text-xl font-medium text-text">Topics Covered</h2>
+              <div className="mt-4 flex flex-wrap gap-2">
                 {post.technologies.map((item) => (
-                  <span key={item} className='rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700'>
+                  <span key={item} className="editorial-chip">
                     {item}
                   </span>
                 ))}

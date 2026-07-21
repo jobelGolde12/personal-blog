@@ -7,12 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0066FF',
-        secondary: '#A020F0',
+        bg: '#1A120E',
+        'bg-secondary': '#24160F',
+        card: '#2D1C14',
+        accent: '#D5B26A',
+        text: '#F4E8D6',
+        'text-secondary': '#BDA58A',
+        muted: '#7F6756',
       },
       fontFamily: {
-        sans: ['system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['ui-monospace', 'Consolas', 'monospace'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

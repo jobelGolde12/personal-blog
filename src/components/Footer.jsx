@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { Code2, Mail, Phone } from 'lucide-react';
 
 const FacebookIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
 const InstagramIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -16,7 +16,7 @@ const InstagramIcon = ({ size = 18 }) => (
 );
 
 const LinkedinIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect x="2" y="9" width="4" height="12" />
     <circle cx="4" cy="4" r="2" />
@@ -70,48 +70,52 @@ export default function Footer() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
   };
 
   return (
-    <footer className='bg-gray-900 text-white mt-20'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+    <footer className="mt-24 border-t border-border bg-bg-secondary/80">
+      <div className="editorial-container py-16">
         <motion.div
           variants={containerVariants}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className='grid md:grid-cols-3 gap-8 mb-8'
+          className="mb-12 grid gap-12 md:grid-cols-3"
         >
           <motion.div variants={itemVariants}>
-            <h3 className='text-lg font-bold mb-4'>Jobel V. Golde</h3>
-            <p className='text-gray-400'>
+            <h3 className="font-display text-2xl font-medium tracking-tight text-text">
+              Jobel V. Golde
+            </h3>
+            <p className="mt-4 max-w-xs text-sm leading-7 text-text-secondary">
               IT Graduate | Web Developer | Problem Solver
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className='text-lg font-bold mb-4'>Quick Links</h3>
-            <ul className='space-y-2 text-gray-400'>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.22em] text-muted">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-sm text-text-secondary">
               <li>
-                <a href='/' className='hover:text-white transition-colors'>
+                <a href="/" className="transition-colors duration-300 hover:text-accent">
                   Home
                 </a>
               </li>
               <li>
-                <a href='/about' className='hover:text-white transition-colors'>
+                <a href="/about" className="transition-colors duration-300 hover:text-accent">
                   About
                 </a>
               </li>
               <li>
-                <a href='/projects' className='hover:text-white transition-colors'>
+                <a href="/projects" className="transition-colors duration-300 hover:text-accent">
                   Projects
                 </a>
               </li>
@@ -119,8 +123,10 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className='text-lg font-bold mb-4'>Connect</h3>
-            <div className='space-y-3'>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.22em] text-muted">
+              Connect
+            </h3>
+            <div className="space-y-2">
               {contactLinks.map((link) => {
                 const Icon = link.icon;
                 const isExternal = link.href.startsWith('http');
@@ -131,17 +137,17 @@ export default function Footer() {
                     href={link.href}
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
-                    className='group flex items-center gap-3 rounded-xl px-3 py-2 text-gray-400 transition-all duration-200 hover:bg-gray-800 hover:text-white hover:translate-x-1'
+                    className="group flex items-center gap-3 rounded-sm px-2 py-2 text-text-secondary transition-all duration-300 hover:bg-card/70 hover:text-text"
                     aria-label={link.label}
                   >
-                    <span className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-gray-300 transition-colors duration-200 group-hover:bg-white group-hover:text-gray-900'>
-                      <Icon size={18} />
+                    <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-border text-muted transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">
+                      <Icon size={16} strokeWidth={1.5} />
                     </span>
-                    <span className='flex flex-col'>
-                      <span className='text-xs uppercase tracking-[0.2em] text-gray-500 group-hover:text-gray-300'>
+                    <span className="flex min-w-0 flex-col">
+                      <span className="text-[0.65rem] uppercase tracking-[0.2em] text-muted">
                         {link.label}
                       </span>
-                      <span className='text-sm font-medium text-gray-300 group-hover:text-white'>
+                      <span className="truncate text-sm text-text-secondary transition-colors group-hover:text-text">
                         {link.value}
                       </span>
                     </span>
@@ -152,12 +158,14 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
+        <div className="editorial-divider mb-8" />
+
         <motion.div
           variants={itemVariants}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className='border-t border-gray-800 pt-8 text-center text-gray-400'
+          className="text-center text-sm text-muted"
         >
           <p>
             © {currentYear} Jobel V. Golde. All rights reserved. Built with React,

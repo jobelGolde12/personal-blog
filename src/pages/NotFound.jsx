@@ -4,25 +4,24 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+    <div className="editorial-page relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-muted/15 blur-3xl" />
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-2xl mx-auto px-4 text-center z-10"
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 mx-auto max-w-2xl px-4 text-center"
       >
-        {/* 404 Animation */}
         <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
           className="mb-8"
         >
-          <div className="text-9xl md:text-[150px] font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <div className="font-display text-9xl font-medium text-accent md:text-[150px]">
             404
           </div>
         </motion.div>
@@ -30,8 +29,8 @@ export default function NotFound() {
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+          transition={{ delay: 0.15, duration: 0.45 }}
+          className="editorial-title mb-4 text-4xl md:text-5xl"
         >
           Page Not Found
         </motion.h1>
@@ -39,58 +38,26 @@ export default function NotFound() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-xl text-gray-600 mb-8"
+          transition={{ delay: 0.25, duration: 0.45 }}
+          className="mb-10 text-lg leading-8 text-text-secondary"
         >
-          Oops! It looks like the page you're looking for doesn't exist. Don't worry, let's get you back on track.
+          Oops! It looks like the page you&apos;re looking for doesn&apos;t exist. Don&apos;t worry, let&apos;s get you back on track.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          transition={{ delay: 0.35, duration: 0.4 }}
+          className="flex flex-col justify-center gap-4 sm:flex-row"
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow"
-            >
-              <ArrowLeft size={18} />
-              Go Home
-            </Link>
-          </motion.div>
+          <Link to="/" className="editorial-btn editorial-btn-primary">
+            <ArrowLeft size={16} strokeWidth={1.5} />
+            Go Home
+          </Link>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all"
-            >
-              Report Issue
-            </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* Floating Elements */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-20 right-20 text-4xl opacity-20"
-        >
-          🚀
-        </motion.div>
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-          className="absolute bottom-20 left-20 text-4xl opacity-20"
-        >
-          💻
+          <Link to="/contact" className="editorial-btn editorial-btn-ghost">
+            Report Issue
+          </Link>
         </motion.div>
       </motion.div>
     </div>
