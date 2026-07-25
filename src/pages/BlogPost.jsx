@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock3, User } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { getBlogPostBySlug } from '../content/blogPosts';
+import SEO from '../components/SEO';
+import { ArticleJsonLd } from '../components/JsonLd';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -18,6 +20,19 @@ export default function BlogPost() {
 
   return (
     <div className="editorial-page">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        canonical={`https://jobelgolde.com/blog/${post.slug}`}
+        ogType="article"
+        article={{
+          publishedTime: post.date,
+          author: post.author,
+          tags: post.technologies,
+        }}
+      />
+      <ArticleJsonLd post={post} />
+
       <motion.section
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}

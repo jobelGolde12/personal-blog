@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Code2, Layers3, Sparkles } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const projects = [
   {
@@ -62,6 +63,12 @@ export default function Projects() {
 
   return (
     <div className="editorial-page relative overflow-hidden">
+      <SEO
+        title="Projects & Portfolio"
+        description="Four real projects from my GitHub work, showcasing React, Laravel, Vue.js, and modern web development skills."
+        canonical="https://jobelgolde.com/projects"
+      />
+
       <div className="pointer-events-none absolute left-0 top-24 h-64 w-64 rounded-full bg-accent/8 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-40 h-72 w-72 rounded-full bg-muted/15 blur-3xl" />
 

@@ -210,6 +210,8 @@ export default function Hero() {
                 <img
                   src="/images/me.jpg"
                   alt="Jobel V. Golde"
+                  width="400"
+                  height="500"
                   className="h-full w-full object-cover"
                   onError={(e) => {
                     e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"%3E%3Crect fill="%232D1C14" width="400" height="500"/%3E%3Ctext x="50%25" y="50%25" font-size="18" text-anchor="middle" dy=".3em" fill="%23D5B26A"%3EProfile Image%3C/text%3E%3C/svg%3E';

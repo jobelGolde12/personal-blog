@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function NotFound() {
   return (
     <div className="editorial-page relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+      <SEO
+        title="Page Not Found"
+        description="The page you are looking for does not exist."
+        canonical="https://jobelgolde.com/404"
+      />
+
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-muted/15 blur-3xl" />

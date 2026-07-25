@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Clock3, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../content/blogPosts';
+import SEO from '../components/SEO';
 
 export default function Blog() {
   const containerVariants = {
@@ -31,6 +32,12 @@ export default function Blog() {
 
   return (
     <div className="editorial-page">
+      <SEO
+        title="Blog & Articles"
+        description="Practical notes on React, Tailwind CSS, code quality, and full-stack development, written to be useful in real projects."
+        canonical="https://jobelgolde.com/blog"
+      />
+
       <motion.section
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}

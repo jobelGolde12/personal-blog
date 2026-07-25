@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, CheckCircle2, Code2, Loader2, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import SEO from '../components/SEO';
 
 const contactMethods = [
   {
@@ -105,6 +106,12 @@ export default function Contact() {
 
   return (
     <div id="contact" className="editorial-page relative overflow-hidden">
+      <SEO
+        title="Contact"
+        description="Get in touch with Jobel V. Golde for projects, collaboration, and proposals. Reach out via phone, email, or GitHub."
+        canonical="https://jobelgolde.com/contact"
+      />
+
       <div className="pointer-events-none absolute left-0 top-24 h-72 w-72 rounded-full bg-accent/8 blur-3xl" />
       <div className="pointer-events-none absolute right-0 bottom-16 h-80 w-80 rounded-full bg-muted/15 blur-3xl" />
 
@@ -215,7 +222,7 @@ export default function Contact() {
                 Message sent successfully!
               </p>
               <p className="mt-1 text-text-secondary">
-                I’ll get back to you as soon as possible.
+                I'll get back to you as soon as possible.
               </p>
             </motion.div>
           ) : (

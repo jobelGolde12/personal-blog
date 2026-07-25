@@ -79,6 +79,8 @@ export default function AboutInternship({ itemVariants, aboutContent }) {
                   <img
                     src={image}
                     alt={`Internship experience ${currentIndex + index + 1}`}
+                    width="256"
+                    height="256"
                     className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </motion.div>

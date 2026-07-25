@@ -10,6 +10,7 @@ import AboutStrengths from '../components/about/AboutStrengths';
 import AboutInterests from '../components/about/AboutInterests';
 import AboutGallery from '../components/about/AboutGallery';
 import AboutCareer from '../components/about/AboutCareer';
+import SEO from '../components/SEO';
 
 const skillCategories = [
   {
@@ -306,6 +307,12 @@ export default function About() {
 
   return (
     <div id="about" className="editorial-page scroll-mt-24">
+      <SEO
+        title="About Me"
+        description="Discover the journey, skills, and passion of Jobel V. Golde — IT graduate, web developer specializing in React, Vue.js, and Laravel."
+        canonical="https://jobelgolde.com/about"
+      />
+
       <motion.section
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}

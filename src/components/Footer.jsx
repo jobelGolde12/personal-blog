@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code2, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FacebookIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -105,19 +106,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-text-secondary">
               <li>
-                <a href="/" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/" className="transition-colors duration-300 hover:text-accent">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/about" className="transition-colors duration-300 hover:text-accent">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/projects" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/projects" className="transition-colors duration-300 hover:text-accent">
                   Projects
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
