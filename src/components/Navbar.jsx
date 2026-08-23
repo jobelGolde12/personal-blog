@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Send, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '../utils/cn';
 
@@ -19,8 +19,19 @@ export default function Navbar() {
   );
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileEmail, setMobileEmail] = useState('');
+  const [mobileSubmitted, setMobileSubmitted] = useState(false);
 
   const isActive = (path) => activePath === path;
+
+  const handleMobileSubscribe = (e) => {
+    e.preventDefault();
+    if (mobileEmail) {
+      setMobileSubmitted(true);
+      setMobileEmail('');
+      setTimeout(() => setMobileSubmitted(false), 4000);
+    }
+  };
 
   useEffect(() => {
     if (location.pathname === '/about' || (location.pathname === '/' && location.hash === '#about')) {
@@ -162,6 +173,36 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
+              
+              <div className="pt-4 border-t border-border mt-4">
+                <h3 className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-muted px-4">
+                  Stay Updated
+                </h3>
+                <form onSubmit={handleMobileSubscribe} className="px-4 pb-4 space-y-3">
+                  <div className="relative">
+                    <input
+                      type="email"
+                      value={mobileEmail}
+                      onChange={(e) => setMobileEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="editorial-input pr-12 w-full"
+                      aria-label="Email address for newsletter"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      disabled={!mobileEmail || mobileSubmitted}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 text-muted hover:text-accent transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      aria-label="Subscribe to newsletter"
+                    >
+                      <Send size={18} strokeWidth={1.5} />
+                    </button>
+                  </div>
+                  {mobileSubmitted && (
+                    <p className="text-sm text-accent">Thanks for subscribing!</p>
+                  )}
+                </form>
+              </div>
             </div>
           </motion.div>
         )}

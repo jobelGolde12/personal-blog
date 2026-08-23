@@ -1,5 +1,4 @@
 import Hero from '../features/hero/Hero';
-import About from './About';
 import SEO from '../components/SEO';
 import { OrganizationJsonLd, WebsiteJsonLd } from '../components/JsonLd';
 
@@ -14,7 +13,6 @@ export default function Home() {
       <OrganizationJsonLd />
       <WebsiteJsonLd />
       <Hero />
-      <About />
     </>
   );
 }

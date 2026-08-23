@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock3, User } from 'lucide-react';
+import { ArrowRight, Calendar, Clock3, User, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../content/blogPosts';
 import SEO from '../components/SEO';
@@ -9,7 +9,7 @@ export default function Blog() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.12 },
     },
   };
 
@@ -115,7 +115,7 @@ export default function Blog() {
           </div>
         </motion.article>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {additionalPosts.map((post) => (
             <motion.article
               key={post.slug}
