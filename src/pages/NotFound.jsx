@@ -57,12 +57,12 @@ export default function NotFound() {
           transition={{ delay: 0.35, duration: 0.4 }}
           className="flex flex-col justify-center gap-4 sm:flex-row"
         >
-          <Link to="/" className="editorial-btn editorial-btn-primary">
+          <Link to="/" className="editorial-btn editorial-btn-primary cursor-pointer">
             <ArrowLeft size={16} strokeWidth={1.5} />
             Go Home
           </Link>
 
-          <Link to="/contact" className="editorial-btn editorial-btn-ghost">
+          <Link to="/contact" className="editorial-btn editorial-btn-ghost cursor-pointer">
             Report Issue
           </Link>
         </motion.div>

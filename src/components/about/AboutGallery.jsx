@@ -73,7 +73,7 @@ export default function AboutGallery({ itemVariants }) {
             {galleryImages.map((img, i) => (
               <div
                 key={`set1-${i}`}
-                className={`stamp-frame w-64 flex-shrink-0 bg-bg-secondary p-1.5 ${img.rotate}`}
+                className={`stamp-frame w-64 flex-shrink-0 bg-bg-secondary p-1.5 ${img.rotate} cursor-pointer`}
                 onMouseEnter={pauseMarquee}
                 onMouseLeave={resumeMarquee}
               >
@@ -85,7 +85,7 @@ export default function AboutGallery({ itemVariants }) {
             {galleryImages.map((img, i) => (
               <div
                 key={`set2-${i}`}
-                className={`stamp-frame w-64 flex-shrink-0 bg-bg-secondary p-1.5 ${img.rotate}`}
+                className={`stamp-frame w-64 flex-shrink-0 bg-bg-secondary p-1.5 ${img.rotate} cursor-pointer`}
                 onMouseEnter={pauseMarquee}
                 onMouseLeave={resumeMarquee}
               >

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle2, Code2, Loader2, Mail, Phone, Send } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Code2, Download, Loader2, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '../components/SEO';
 
@@ -160,7 +160,7 @@ export default function Contact() {
                     rel={isExternal ? 'noopener noreferrer' : undefined}
                     variants={itemVariants}
                     whileHover={{ x: 4 }}
-                    className="group flex items-start gap-4 rounded-sm border border-border bg-bg/40 p-4 transition-all duration-300 hover:border-accent/35 hover:bg-card"
+                    className="group flex items-start gap-4 rounded-sm border border-border bg-bg/40 p-4 transition-all duration-200 hover:border-accent/35 hover:bg-card cursor-pointer"
                   >
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-border text-accent transition-transform duration-300 group-hover:scale-105">
                       <Icon size={20} strokeWidth={1.5} />
@@ -189,19 +189,21 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              ['Phone', 'Direct call link'],
-              ['Email', 'Mail client opens'],
-              ['GitHub', 'External profile link'],
-            ].map(([label, value]) => (
-              <div key={label} className="editorial-card p-5">
-                <div className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-muted">
-                  {label}
-                </div>
-                <div className="mt-2 text-sm font-medium text-text-secondary">{value}</div>
-              </div>
-            ))}
+          <div className="editorial-card p-6">
+            <h3 className="font-display text-lg font-medium text-text mb-3">Available for Opportunities</h3>
+            <p className="text-sm text-text-secondary mb-4">
+              I am currently open to full-time positions, freelance projects, and collaboration opportunities. 
+              Let us discuss how I can help bring your ideas to life.
+            </p>
+            <a
+              href="/resume-jobel-golde.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-btn editorial-btn-primary text-xs cursor-pointer"
+            >
+              <Download size={14} strokeWidth={1.5} />
+              Download Resume (PDF)
+            </a>
           </div>
         </motion.div>
 
@@ -280,7 +282,7 @@ export default function Contact() {
                 disabled={sending}
                 whileHover={sending ? {} : { y: -1 }}
                 whileTap={sending ? {} : { scale: 0.98 }}
-                className="editorial-btn editorial-btn-primary group w-full disabled:cursor-not-allowed disabled:opacity-60"
+                className="editorial-btn editorial-btn-primary group w-full disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
               >
                 {sending ? (
                   <>

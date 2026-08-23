@@ -18,9 +18,9 @@ export default function Layout() {
   }, [location]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-bg text-text font-sans">
+    <div className="flex min-h-screen flex-col bg-bg text-text font-sans antialiased">
       <Navbar />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-16">
         <Outlet />
       </main>
       <Footer />

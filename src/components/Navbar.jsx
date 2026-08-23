@@ -88,14 +88,16 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         scrolled
-          ? 'border-border bg-bg/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)]'
-          : 'border-transparent bg-bg/40 backdrop-blur-md'
+          ? 'bg-bg/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+          : 'bg-transparent'
       )}
+      role="navigation"
+      aria-label="Main navigation"
     >
-      <div className="editorial-container">
-        <div className="flex h-20 items-center justify-between">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex-shrink-0 group" aria-label="Home">
             <motion.img
               src="/jobel_logo.png"
@@ -121,10 +123,10 @@ export default function Navbar() {
                 <Link
                   to={item.path}
                   className={cn(
-                    'relative px-3.5 py-2 text-[0.8rem] font-medium tracking-[0.16em] uppercase transition-colors duration-300',
+                    'relative px-3 py-2 text-[0.75rem] font-medium tracking-[0.18em] uppercase transition-all duration-200 cursor-pointer',
                     isActive(item.path)
                       ? 'text-accent'
-                      : 'text-text-secondary hover:text-text'
+                      : 'text-text-secondary hover:text-text hover:bg-card/40'
                   )}
                 >
                   {item.label}
@@ -142,8 +144,9 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-sm p-2 text-text-secondary transition-colors duration-300 hover:text-accent md:hidden"
+            className="rounded-sm p-2 text-text-secondary transition-all duration-200 hover:text-accent hover:bg-card/50 cursor-pointer md:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
           </button>

@@ -41,7 +41,7 @@ export default function BlogPost() {
       >
         <Link
           to="/blog"
-          className="inline-flex items-center gap-2 rounded-sm border border-border bg-card/60 px-4 py-2 text-sm font-medium text-text-secondary backdrop-blur transition-all duration-300 hover:border-accent/40 hover:text-accent"
+          className="inline-flex items-center gap-2 rounded-sm border border-border bg-card/60 px-4 py-2 text-sm font-medium text-text-secondary backdrop-blur transition-all duration-200 hover:border-accent/40 hover:text-accent cursor-pointer"
         >
           <ArrowLeft size={16} strokeWidth={1.5} /> Back to blog
         </Link>

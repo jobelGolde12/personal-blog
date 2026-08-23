@@ -91,8 +91,19 @@ body::after {
 
 /* Focus rings for accessibility */
 :focus-visible {
-  outline: 1px solid var(--color-accent);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure focus is visible on interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Typography defaults */
@@ -147,11 +158,11 @@ a {
   border: 1px solid var(--color-border-strong);
   background: rgba(45, 28, 20, 0.55);
   color: var(--color-accent);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   backdrop-filter: blur(12px);
 }
@@ -163,12 +174,13 @@ a {
   color: var(--color-text);
   line-height: 1.1;
   text-wrap: balance;
+  font-optical-sizing: auto;
 }
 
 .editorial-lead {
   font-family: var(--font-reading);
   color: var(--color-text-secondary);
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 400;
   line-height: var(--line-reading);
   letter-spacing: var(--tracking-reading);
@@ -178,13 +190,13 @@ a {
 .editorial-card {
   background: rgba(45, 28, 20, 0.72);
   border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(14px);
   transition:
-    border-color 0.35s var(--ease-editorial),
-    box-shadow 0.35s var(--ease-editorial),
-    transform 0.35s var(--ease-editorial);
+    border-color 0.25s var(--ease-editorial),
+    box-shadow 0.25s var(--ease-editorial),
+    transform 0.25s var(--ease-editorial);
 }
 
 .editorial-card:hover {
@@ -197,19 +209,19 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 0.25rem;
   border: 1px solid var(--color-accent);
   transition:
-    background-color 0.35s var(--ease-editorial),
-    color 0.35s var(--ease-editorial),
-    border-color 0.35s var(--ease-editorial),
-    transform 0.35s var(--ease-editorial),
-    box-shadow 0.35s var(--ease-editorial);
+    background-color 0.25s var(--ease-editorial),
+    color 0.25s var(--ease-editorial),
+    border-color 0.25s var(--ease-editorial),
+    transform 0.25s var(--ease-editorial),
+    box-shadow 0.25s var(--ease-editorial);
 }
 
 .editorial-btn-primary {
@@ -240,14 +252,14 @@ a {
   border: 1px solid var(--color-border);
   background: rgba(26, 18, 14, 0.45);
   color: var(--color-text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  padding: 0.35rem 0.75rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 9999px;
   transition:
-    border-color 0.3s var(--ease-editorial),
-    color 0.3s var(--ease-editorial),
-    background-color 0.3s var(--ease-editorial);
+    border-color 0.25s var(--ease-editorial),
+    color 0.25s var(--ease-editorial),
+    background-color 0.25s var(--ease-editorial);
 }
 
 .editorial-chip:hover,
@@ -362,10 +374,10 @@ a {
 
 .editorial-section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
   color: var(--color-text);
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.25rem;
   letter-spacing: var(--tracking-heading);
   line-height: 1.15;
   text-wrap: balance;
@@ -378,14 +390,14 @@ a {
   background: rgba(26, 18, 14, 0.55);
   color: var(--color-text);
   border-radius: 0.35rem;
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 1rem;
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   outline: none;
   transition:
-    border-color 0.3s var(--ease-editorial),
-    box-shadow 0.3s var(--ease-editorial),
-    background-color 0.3s var(--ease-editorial);
+    border-color 0.25s var(--ease-editorial),
+    box-shadow 0.25s var(--ease-editorial),
+    background-color 0.25s var(--ease-editorial);
 }
 
 .editorial-input::placeholder {
@@ -540,6 +552,14 @@ a {
 @media (min-width: 768px) {
   .editorial-lead {
     max-width: var(--measure);
+  }
+}
+
+/* Mobile touch target sizing */
+@media (max-width: 767px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 

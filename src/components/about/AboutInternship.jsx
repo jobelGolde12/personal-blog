@@ -59,7 +59,7 @@ export default function AboutInternship({ itemVariants, aboutContent }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={handlePrev}
-            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-300 hover:border-accent/50 hover:bg-card"
+            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-200 hover:border-accent/50 hover:bg-card cursor-pointer"
             aria-label="Previous images"
           >
             <ChevronLeft size={22} strokeWidth={1.5} />
@@ -92,7 +92,7 @@ export default function AboutInternship({ itemVariants, aboutContent }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={handleNext}
-            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-300 hover:border-accent/50 hover:bg-card"
+            className="flex-shrink-0 rounded-sm border border-border p-3 text-accent transition-colors duration-200 hover:border-accent/50 hover:bg-card cursor-pointer"
             aria-label="Next images"
           >
             <ChevronRight size={22} strokeWidth={1.5} />

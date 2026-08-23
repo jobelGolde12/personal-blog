@@ -42,6 +42,56 @@ export const blogPosts = [
     technologies: ['React 19', 'Vite', 'Tailwind CSS', 'Framer Motion'],
   },
   {
+    slug: 'building-dugtong-blood-donor-app-react-native',
+    title: 'Building DUGTONG: A Blood Donor App with React Native',
+    excerpt:
+      'How I built a cross-platform blood donor management app for Sorsogon Province, solving real-world challenges with React Native and Turso.',
+    author: 'Jobel V. Golde',
+    date: '2024-12-12',
+    category: 'Mobile Development',
+    readTime: '10 min read',
+    intro:
+      'When the Province of Sorsogon needed a better way to manage blood donor information, I built DUGTONG — a cross-platform mobile app using React Native and Expo. The project taught me more about offline-first design, real-time data, and mobile UX than any tutorial ever could.',
+    sections: [
+      {
+        heading: 'The problem: paper-based donor tracking',
+        paragraphs: [
+          'Blood donation management in rural Philippine provinces often relies on paper records and spreadsheets. When a blood drive happens, organizers manually collect donor information, making it difficult to search for specific donors, track donation history, or coordinate urgent requests.',
+          'The goal was to build a mobile app that field workers could use on their phones — even with poor connectivity — to register donors, search existing records, and manage appointments.',
+        ],
+      },
+      {
+        heading: 'Choosing the right stack',
+        paragraphs: [
+          'I chose React Native with Expo because it allowed me to build for both Android and iOS from a single codebase. For the database, I used Turso — an edge database based on libSQL — which provides excellent read performance and offline capabilities.',
+          'TypeScript was non-negotiable. In a mobile app where data integrity matters (we are dealing with medical information), type safety prevents entire categories of bugs.',
+        ],
+      },
+      {
+        heading: 'Key challenges and solutions',
+        paragraphs: [
+          'Challenge 1: Offline-first data. Field workers often operate in areas with poor connectivity. I implemented a local-first strategy where data is cached on-device and synced when connectivity returns.',
+          'Challenge 2: Real-time search. Donor lookup needed to be fast even with thousands of records. Turso edge queries combined with debounced search input made this performant.',
+          'Challenge 3: Cross-platform consistency. Testing on both Android and iOS revealed subtle differences in gesture handling and safe area calculations that required platform-specific adjustments.',
+        ],
+      },
+      {
+        heading: 'Results and lessons',
+        paragraphs: [
+          'The app reduced donor lookup time by approximately 60% compared to spreadsheet searches. Field workers could register donors in under 30 seconds, and the search functionality worked reliably even on older devices.',
+          'The biggest lesson: mobile development is about constraints. Every design decision must account for small screens, slow networks, and touch-first interaction. Building for the worst case first makes the happy case effortless.',
+        ],
+      },
+    ],
+    takeaways: [
+      'Offline-first design is essential for mobile apps in areas with poor connectivity.',
+      'TypeScript prevents data integrity issues in medical/critical applications.',
+      'Edge databases like Turso provide excellent performance for read-heavy mobile apps.',
+      'Test on real devices early — simulators miss important UX issues.',
+    ],
+    technologies: ['React Native', 'Expo', 'Turso', 'TypeScript'],
+  },
+  {
     slug: 'mastering-tailwind-css-from-basics-to-advanced',
     title: 'Mastering Tailwind CSS: From Basics to Advanced',
     excerpt:
@@ -81,6 +131,55 @@ export const blogPosts = [
       'Design mobile behavior first, then expand outward.',
     ],
     technologies: ['Tailwind CSS', 'Responsive Design', 'Design Systems'],
+  },
+  {
+    slug: 'debugging-performance-bottlenecks-react-apps',
+    title: 'Debugging Performance Bottlenecks in React Applications',
+    excerpt:
+      'A practical guide to identifying and fixing the most common performance issues in React apps, from unnecessary rerenders to slow data fetching.',
+    author: 'Jobel V. Golde',
+    date: '2024-12-08',
+    category: 'Performance',
+    readTime: '9 min read',
+    intro:
+      'Performance problems in React apps rarely come from a single dramatic cause. They accumulate from small decisions — a component that rerenders too often, a state update that triggers cascading changes, or a network request that blocks the main thread.',
+    sections: [
+      {
+        heading: '1. Identify the real bottleneck first',
+        paragraphs: [
+          'Before optimizing anything, measure. React DevTools Profiler shows exactly which components rerender and why. Chrome DevTools Performance panel reveals layout thrashing and long tasks.',
+          'I once spent hours memoizing components that were not the problem. The actual bottleneck was a single useEffect that re-fetched data on every render because of an unstable dependency.',
+        ],
+      },
+      {
+        heading: '2. Fix unnecessary rerenders',
+        paragraphs: [
+          'The most common performance issue in React is components rerendering when their props have not meaningfully changed. Use React.memo for expensive components, useMemo for costly calculations, and useCallback for stable function references.',
+          'But do not memoize everything — the overhead of memoization can exceed the cost of occasional rerenders. Profile first, optimize second.',
+        ],
+      },
+      {
+        heading: '3. Manage state placement carefully',
+        paragraphs: [
+          'Lifting state too high causes entire subtrees to rerender. Keeping state too local causes prop drilling. The sweet spot is colocating state as close to where it is used as possible, and only lifting it when multiple components need the same data.',
+          'For global state, consider whether you truly need a state management library or whether React context with proper splitting would suffice.',
+        ],
+      },
+      {
+        heading: '4. Optimize data fetching',
+        paragraphs: [
+          'Waterfall requests — where one fetch triggers another — are a common cause of slow page loads. Where possible, fetch data in parallel or use server-side data loading.',
+          'For client-side fetching, implement proper caching, deduplication, and stale-while-revalidate patterns. Libraries like TanStack Query handle this well.',
+        ],
+      },
+    ],
+    takeaways: [
+      'Always measure before optimizing — do not guess at bottlenecks.',
+      'Use React DevTools Profiler to identify expensive rerenders.',
+      'Memoize selectively — not everything needs to be memoized.',
+      'Avoid waterfall data fetching by parallelizing independent requests.',
+    ],
+    technologies: ['React', 'Performance', 'DevTools', 'Profiling'],
   },
   {
     slug: 'the-art-of-writing-clean-maintainable-code',
@@ -124,6 +223,55 @@ export const blogPosts = [
     technologies: ['Clean Code', 'Architecture', 'Testing'],
   },
   {
+    slug: 'building-real-time-inventory-system-nextjs',
+    title: 'Building a Real-Time Inventory System with Next.js and Turso',
+    excerpt:
+      'How I built a school inventory management system with real-time updates, Server Actions, and edge database performance using Next.js and Turso.',
+    author: 'Jobel V. Golde',
+    date: '2024-12-01',
+    category: 'Next.js',
+    readTime: '11 min read',
+    intro:
+      'School inventory management is a problem that sounds simple until you try to build it. Multiple users need to update stock levels simultaneously, reports need to reflect real-time data, and the system must work reliably on school networks that are not always stable.',
+    sections: [
+      {
+        heading: 'Why Next.js and Turso?',
+        paragraphs: [
+          'Next.js App Router provides excellent developer experience with Server Components and Server Actions. Turso, an edge database built on libSQL, offers low-latency reads that make real-time features feel instant.',
+          'The combination meant I could build a full-stack application without managing separate frontend and backend deployments.',
+        ],
+      },
+      {
+        heading: 'Implementing real-time updates',
+        paragraphs: [
+          'True real-time requires WebSockets or Server-Sent Events, but for an inventory system, a polling strategy with smart caching was sufficient and much simpler to implement.',
+          'I used Next.js revalidation to refresh data at regular intervals, combined with optimistic updates for user actions. This gave the perception of real-time updates without the complexity of WebSocket management.',
+        ],
+      },
+      {
+        heading: 'Server Actions for form handling',
+        paragraphs: [
+          'Next.js Server Actions simplified form handling dramatically. Instead of creating API endpoints and wiring up fetch calls, I could define server functions directly and call them from client components.',
+          'The key insight: Server Actions work best for mutations (create, update, delete) while Server Components handle reads. This separation kept the code clean and the data flow predictable.',
+        ],
+      },
+      {
+        heading: 'Challenges with multi-user editing',
+        paragraphs: [
+          'The hardest problem was handling concurrent edits. When two staff members try to update the same inventory item simultaneously, you need conflict resolution. I implemented a simple versioning strategy where the last write wins, with a visual indicator when data has been refreshed.',
+          'For a school inventory system, this pragmatic approach worked well. Enterprise solutions would use operational transformation, but that level of complexity was not justified here.',
+        ],
+      },
+    ],
+    takeaways: [
+      'Server Actions simplify form handling in Next.js dramatically.',
+      'Polling with smart caching can provide "real-time" feel without WebSocket complexity.',
+      'Edge databases like Turso excel at read-heavy applications.',
+      'Choose conflict resolution strategies that match your use case — not every app needs Google Docs-level collaboration.',
+    ],
+    technologies: ['Next.js', 'Turso', 'Server Actions', 'TypeScript'],
+  },
+  {
     slug: 'full-stack-development-with-laravel-and-vuejs',
     title: 'Full-Stack Development with Laravel and Vue.js',
     excerpt:
@@ -163,6 +311,55 @@ export const blogPosts = [
       'Design the API contract before wiring the UI.',
     ],
     technologies: ['Laravel', 'Vue.js', 'MySQL', 'Bootstrap'],
+  },
+  {
+    slug: 'from-student-to-developer-lessons-from-internship',
+    title: 'From Student to Developer: Lessons from My Internship',
+    excerpt:
+      'What I learned during my IT internship — from building real systems to understanding how professional development differs from academic projects.',
+    author: 'Jobel V. Golde',
+    date: '2024-11-25',
+    category: 'Career',
+    readTime: '7 min read',
+    intro:
+      'My internship at a school in Sorsogon was where classroom knowledge met real-world constraints. Building an Account Code System for the accounting office taught me more about software development than any course project ever did.',
+    sections: [
+      {
+        heading: 'The gap between academic and professional development',
+        paragraphs: [
+          'In school, you build projects for grades. In a professional setting, you build systems for people who depend on them daily. The stakes are different, the requirements are messier, and the users have opinions.',
+          'The biggest adjustment was learning that "it works" is not the same as "it is ready." Testing, documentation, edge cases, and user feedback all matter in ways that academic projects rarely require.',
+        ],
+      },
+      {
+        heading: 'Building the Account Code System',
+        paragraphs: [
+          'The school needed a way to manage accounting categories for various transactions. I built this using Next.js, Tailwind CSS, and Turso — a stack I chose for its speed and developer experience.',
+          'The system needed to handle CRUD operations for account codes, support search and filtering, and generate reports for the accounting office. Simple requirements, but implementing them in a way that non-technical staff could use required careful UI design.',
+        ],
+      },
+      {
+        heading: 'Working with non-technical stakeholders',
+        paragraphs: [
+          'The hardest part was not the code — it was understanding what the accounting staff actually needed. Their initial requests were vague, and translating "we need a better system" into specific features required patient conversation and prototyping.',
+          'I learned to show, not tell. Instead of asking "what features do you want?", I built quick prototypes and asked "does this help?". The feedback was always more useful than the original requirements.',
+        ],
+      },
+      {
+        heading: 'Lessons that stuck',
+        paragraphs: [
+          'Professional development is 40% coding and 60% communication. Understanding the problem, managing expectations, and documenting your work are just as important as writing clean code.',
+          'I also learned that simplicity is a feature. The accounting staff did not need a fancy dashboard — they needed a reliable tool that worked every time and did exactly what they expected.',
+        ],
+      },
+    ],
+    takeaways: [
+      'Show prototypes to stakeholders instead of asking abstract questions.',
+      'Simplicity is a feature — users need reliability over complexity.',
+      'Documentation and communication are professional development skills, not afterthoughts.',
+      'The gap between "it works" and "it is ready" is where professionalism lives.',
+    ],
+    technologies: ['Next.js', 'Tailwind CSS', 'Turso', 'TypeScript'],
   },
 ];
 

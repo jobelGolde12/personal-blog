@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Mail, Phone, Send } from 'lucide-react';
+import { Code2, Download, Mail, Phone, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -118,29 +118,40 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-text-secondary">
               <li>
-                <Link to="/" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/" className="transition-colors duration-200 hover:text-accent cursor-pointer">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/about" className="transition-colors duration-200 hover:text-accent cursor-pointer">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/projects" className="transition-colors duration-200 hover:text-accent cursor-pointer">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/blog" className="transition-colors duration-200 hover:text-accent cursor-pointer">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="transition-colors duration-300 hover:text-accent">
+                <Link to="/contact" className="transition-colors duration-200 hover:text-accent cursor-pointer">
                   Contact
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="/resume-jobel-golde.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-accent cursor-pointer"
+                >
+                  <Download size={14} strokeWidth={1.5} />
+                  Resume (PDF)
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -165,8 +176,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  disabled={!email || submitted}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted hover:text-accent transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={!email || submitted}                    className="absolute right-2 top-1/2 -translate-y-1/2 text-muted hover:text-accent transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   aria-label="Subscribe to newsletter"
                 >
                   <Send size={18} strokeWidth={1.5} />
@@ -193,7 +203,7 @@ export default function Footer() {
                     href={link.href}
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
-                    className="group flex items-center gap-3 rounded-sm px-2 py-2 text-text-secondary transition-all duration-300 hover:bg-card/70 hover:text-text"
+                    className="group flex items-center gap-3 rounded-sm px-2 py-2 text-text-secondary transition-all duration-200 hover:bg-card/70 hover:text-text cursor-pointer"
                     aria-label={link.label}
                   >
                     <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-border text-muted transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">

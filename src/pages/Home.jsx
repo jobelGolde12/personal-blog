@@ -1,4 +1,7 @@
 import Hero from '../features/hero/Hero';
+import SkillsStrip from '../features/home/SkillsStrip';
+import FeaturedProjects from '../features/home/FeaturedProjects';
+import LatestBlog from '../features/home/LatestBlog';
 import SEO from '../components/SEO';
 import { OrganizationJsonLd, WebsiteJsonLd } from '../components/JsonLd';
 
@@ -13,6 +16,9 @@ export default function Home() {
       <OrganizationJsonLd />
       <WebsiteJsonLd />
       <Hero />
+      <SkillsStrip />
+      <FeaturedProjects />
+      <LatestBlog />
     </>
   );
 }

@@ -107,7 +107,7 @@ export default function Blog() {
               <p className="mt-6 text-base leading-8 text-text-secondary">{featuredPost.intro}</p>
               <Link
                 to={`/blog/${featuredPost.slug}`}
-                className="editorial-btn editorial-btn-primary mt-8"
+                className="editorial-btn editorial-btn-primary mt-8 cursor-pointer"
               >
                 Read More <ArrowRight size={16} strokeWidth={1.5} />
               </Link>
@@ -121,7 +121,7 @@ export default function Blog() {
               key={post.slug}
               variants={itemVariants}
               whileHover={{ y: -4 }}
-              className="editorial-card group p-6 sm:p-8"
+              className="editorial-card group p-6 sm:p-8 cursor-pointer"
             >
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
                 <span className="editorial-chip text-accent">{post.category}</span>
@@ -149,7 +149,7 @@ export default function Blog() {
 
               <Link
                 to={`/blog/${post.slug}`}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-accent transition-all duration-300 hover:gap-3 hover:text-[#e6c98a]"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-accent transition-all duration-200 hover:gap-3 hover:text-[#e6c98a] cursor-pointer"
               >
                 Read More <ArrowRight size={16} strokeWidth={1.5} />
               </Link>

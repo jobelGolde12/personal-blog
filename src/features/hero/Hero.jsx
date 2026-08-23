@@ -64,13 +64,13 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#projects"
-                className="editorial-btn editorial-btn-primary"
+                className="editorial-btn editorial-btn-primary cursor-pointer"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="editorial-btn editorial-btn-ghost ml-4"
+                className="editorial-btn editorial-btn-ghost ml-4 cursor-pointer"
               >
                 Get In Touch
               </a>
@@ -81,7 +81,7 @@ export default function Hero() {
                 href="https://github.com/jobelGolde12"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 transition-colors duration-300 hover:text-accent"
+                className="group flex items-center gap-2 transition-colors duration-200 hover:text-accent cursor-pointer"
               >
                 <GitFork className="h-5 w-5" strokeWidth={1.5} />
                 GitHub
@@ -90,7 +90,7 @@ export default function Hero() {
                 href="https://www.facebook.com/jobelGolde"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 transition-colors duration-300 hover:text-accent"
+                className="group flex items-center gap-2 transition-colors duration-200 hover:text-accent cursor-pointer"
               >
                 <svg
                   className="h-5 w-5"
@@ -107,7 +107,7 @@ export default function Hero() {
               </a>
               <a
                 href="mailto:jobelgolde43@gmail.com"
-                className="group flex items-center gap-2 transition-colors duration-300 hover:text-accent"
+                className="group flex items-center gap-2 transition-colors duration-200 hover:text-accent cursor-pointer"
               >
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
                 Email

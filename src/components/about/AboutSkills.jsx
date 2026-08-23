@@ -12,7 +12,7 @@ export default function AboutSkills({ itemVariants, skillCategories }) {
               key={category.title}
               variants={itemVariants}
               whileHover={{ y: -4 }}
-              className="editorial-card group p-6"
+              className="editorial-card group p-6 cursor-pointer"
             >
               <div className="mb-5 flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-border text-accent transition-colors duration-300 group-hover:border-accent/40">
